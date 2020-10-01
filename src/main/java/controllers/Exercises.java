@@ -14,26 +14,26 @@ import org.json.simple.JSONArray;
 
 
 
-@Path("FoodStat")
+@Path("Exercises")
 @Consumes(MediaType.MULTIPART_FORM_DATA)
 @Produces(MediaType.APPLICATION_JSON)
 
-public class FoodStat {
+public class Exercises {
     @GET
     @Path("list")
-    public String FoodStatList() {
-        System.out.println("Invoked FoodStat.FoodStatList()");
+    public String ExercisesList() {
+        System.out.println("Invoked Exercises.ExercisesList()");
         JSONArray response = new JSONArray();
         try {
-            PreparedStatement ps = Main.db.prepareStatement("SELECT FoodID, Name, SugarPer100, FatPer100, CaloriePer100 FROM FoodStat");
+            PreparedStatement ps = Main.db.prepareStatement("SELECT ExerciseID, ExerciseName, LowIntensityPerMin, MedIntensityPerMin, HighIntensityPerMin FROM Exercises");
             ResultSet results = ps.executeQuery();
             while (results.next() == true) {
                 JSONObject row = new JSONObject();
-                row.put("FoodID", results.getInt(1));
-                row.put("Name", results.getString(2));
-                row.put("SugarPer100", results.getDouble(3));
-                row.put("FatPer100", results.getDouble(4));
-                row.put("CaloriePer100", results.getDouble(5));
+                row.put("ExerciseID", results.getInt(1));
+                row.put("ExercisesName", results.getString(2));
+                row.put("LowIntensityPerMin", results.getDouble(3));
+                row.put("MedIntensityPerMin", results.getDouble(4));
+                row.put("HighIntensityPerMin", results.getDouble(5));
                 response.add(row);
             }
             return response.toString();
@@ -43,6 +43,3 @@ public class FoodStat {
         }
     }
 }
-
-
-
