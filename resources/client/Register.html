@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <script>
+        "use strict";
+
+        function submitUser() {
+            console.log("Invoked postSubmitUser()");
+
+            const formData = new FormData(document.getElementById('registerForm'));
+            var url = "/userInformation/add";
+
+            fetch(url, {
+                method: "POST",
+                body: formData,
+            }).then(response => {
+                return response.json()
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) {   //checks if response from server has a key "Error"
+                alert(JSON.stringify(response));        // if it does, convert JSON object to string and alert
+            } else {
+
+            }
+        });
+
+        }
+
+    </script>
+</head>
+
+<body>
+<h1> Register Here:</h1>
+<form id="registerForm">
+    <label for="username">Username:</label><br>
+    <input type="text" id="Username" name="Username" minlength="5" maxlength="25"><br>
+    <label for="password">Password:</label><br>
+    <input type="text" id="Password" name="Password" minlength="5" maxlength="25"><br>
+    <p> Enter your Gender:</p>
+    <input type="radio" id="male" name="Gender" value="m">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="Gender" value="f">
+    <label for="female">Female</label><br>
+    <input type="radio" id="other" name="Gender" value="o">
+    <label for="other">Other</label><br>
+    <p> Enter your Date of Birth:</p>
+    <input type="date" id="DOB" name="DOB">
+    <p> Enter your Height (CM):</p>
+    <input type="number" id="height" name="Height" min="50" max="300"><br>
+    <p> Enter your Weight (KG):</p>
+    <input type="number" id="weight" name="Weight" min="10" max="200"><br><br>
+</form>
+<button onclick="submitUser()">Register</button>
+</body>
+</html>
