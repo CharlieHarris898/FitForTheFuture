@@ -63,20 +63,35 @@ public class UserInformation {
     public String UserInformationAdd(@FormDataParam("Username") String username, @FormDataParam("Password") String password, @FormDataParam("Gender") String gender, @FormDataParam("DOB") String dob, @FormDataParam("Height") Integer height, @FormDataParam("Weight") Integer weight){
         System.out.println("Invoked userInformation.submitUser()");
         try {
-            PreparedStatement ps = Main.db.prepareStatement("INSERT INTO UserInformation (Username, Password, Gender, DOB, Height, Weight) VALUES (?, ?, ?, ?, ?, ?)");
-            ps.setString(1, username);
-            ps.setString(2, password);
-            ps.setString(3, gender);
-            ps.setString(4, dob);
-            ps.setInt(5, height);
-            ps.setInt(6, weight);
-
-            ps.execute();
-            return "{\"OK\": \"Added user.\"}";
-        } catch (Exception exception) {
-            System.out.println("Database error: " + exception.getMessage());
-            return "{\"Error\": \"Unable to create new item, please see server console for more info.\"}";
+            PreparedStatement UsernameCheck = Main.db.prepareStatement("SELECT Username FROM UserInformation WHERE Username = (?)");
+            UsernameCheck.setString(1, username);
+            ResultSet result = UsernameCheck.executeQuery();
+            JSONObject response = new JSONObject();
+            if (result.next()== true) {
+                return "{\"Error\": \"Sorry, that Username is already taken, please try again.\"}";
+            }
         }
+        catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Check server log for information\"}";
+
+        }
+        try {
+            PreparedStatement RegisterSQL = Main.db.prepareStatement("INSERT INTO UserInformation (Username, Password, Gender, DOB, Height, Weight) VALUES (?, ?, ?, ?, ?, ?) ");
+            RegisterSQL.setString(1, username);
+            RegisterSQL.setString(2, password);
+            RegisterSQL.setString(3, gender);
+            RegisterSQL.setString(4, dob);
+            RegisterSQL.setInt(5, height);
+            RegisterSQL.setInt(6, weight);
+
+            RegisterSQL.execute();
+            return "{\"OK\": \"Added user.\"}";
+            }
+        catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Sorry, something went wrong making your account, please try again.\"}";
+            }
 
     }
 

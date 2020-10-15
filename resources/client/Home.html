@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("Info.html", "_self");
+        }
+    </script>
+</head>
+<body>
+
+<div class="header">
+    <button class="NavButton" id ="Home" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id ="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id ="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="img/LogoLowRes.png" id = "Logo" height="275" width="550" align="center"/>
+    <button class="NavButton" id ="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id ="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id ="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+
+
+</div>
+
+
+
+<style>
+    .header {
+        padding: 80px;
+        height: 200px;
+        text-align: center;
+        background: lightgrey;
+        color: white;
+        font-family: "Rockwell", serif;
+    }
+
+    .NavButton {
+        padding: 5px;
+        background: lightskyblue;
+        color: black;
+        font-family: "Rockwell", serif;
+        border-radius: 12px;
+        width: 300px;
+        height: 125px;
+        font-size: xx-large;
+    }
+    .NavButton:hover{background: dodgerblue; color: white}
+
+    #Home{
+        position: fixed;
+        top: 25px;
+        left: 200px;
+    }
+    #Calories{
+        position: fixed;
+        top: 175px;
+        left: 35px;
+    }
+    #Info{
+        position: fixed;
+        top: 175px;
+        left: 365px;
+    }
+    #FoodInfo{
+        position: fixed;
+        top: 25px;
+        right: 200px;
+    }
+    #Recipes{
+        position: fixed;
+        top: 175px;
+        right: 365px;
+    }
+    #Exercises{
+        position: fixed;
+        top: 175px;
+        right: 35px;
+    }
+    #Logo{
+        border-style: 50px solid #555;
+        border: black;
+    }
+
+
+</style>
+</body>
+</html>

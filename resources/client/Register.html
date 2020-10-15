@@ -21,7 +21,7 @@
                 if (response.hasOwnProperty("Error")) {   //checks if response from server has a key "Error"
                 alert(JSON.stringify(response));        // if it does, convert JSON object to string and alert
             } else {
-
+                window.open("Login.html", "_self");
             }
         });
 
