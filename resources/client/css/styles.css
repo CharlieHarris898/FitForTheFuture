@@ -1,0 +1,79 @@
+.header {
+    padding: 80px;
+    height: 200px;
+    text-align: center;
+    background: azure;
+    color: white;
+    font-family: "Rockwell", serif;
+    border: 5px solid black
+}
+
+.mainSection {
+    height: 1000px;
+    text-align: center;
+    background: aliceblue;
+    position: fixed;
+    top: 400px;
+    left:25px;
+    right: 25px;
+    border: 5px solid black
+}
+
+.NavButton {
+    padding: 5px;
+    background: lightskyblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 300px;
+    height: 125px;
+    font-size: xx-large;
+    border: 5px solid darkblue;
+}
+.NavButton:hover{background: dodgerblue; color: white}
+
+.heading {
+    alignment: center;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 75px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color:midnightblue;
+}
+
+#Home{
+    position: fixed;
+    top: 25px;
+    left: 200px;
+}
+#Calories{
+    position: fixed;
+    top: 175px;
+    left: 35px;
+}
+#Info{
+    position: fixed;
+    top: 175px;
+    left: 365px;
+}
+#FoodInfo{
+    position: fixed;
+    top: 25px;
+    right: 200px;
+}
+#Recipes{
+    position: fixed;
+    top: 175px;
+    right: 365px;
+}
+#Exercises{
+    position: fixed;
+    top: 175px;
+    right: 35px;
+}
+#Logo{
+    border: 5px solid #555;
+    border-radius: 12px;
+}
