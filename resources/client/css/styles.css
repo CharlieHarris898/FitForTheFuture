@@ -1,6 +1,21 @@
 .header {
     padding: 80px;
-    height: 200px;
+    height: 175px;
+    left:5px;
+    right:5px;
+    position:fixed;
+    text-align: center;
+    background: azure;
+    color: white;
+    font-family: "Rockwell", serif;
+    border: 5px solid black
+}
+.headerWelcome {
+    padding: 80px;
+    height: 275px;
+    left:5px;
+    right:5px;
+    position:fixed;
     text-align: center;
     background: azure;
     color: white;
@@ -9,12 +24,23 @@
 }
 
 .mainSection {
-    height: 1000px;
     text-align: center;
     background: aliceblue;
     position: fixed;
     top: 400px;
+    bottom: 25px;
     left:25px;
+    right:25px;
+    border: 5px solid black
+}
+
+.mainSectionWelcome {
+    text-align: center;
+    background: aliceblue;
+    position: fixed;
+    top: 500px;
+    bottom: 25px;
+    left: 25px;
     right: 25px;
     border: 5px solid black
 }
@@ -31,6 +57,31 @@
     border: 5px solid darkblue;
 }
 .NavButton:hover{background: dodgerblue; color: white}
+
+.WelcomeButton {
+    padding: 5px;
+    background: lightskyblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 600px;
+    height: 250px;
+    font-size: 60px;
+    border: 5px solid darkblue;
+}
+.WelcomeButton:hover{background: dodgerblue; color: white}
+
+#WelcomeRegister{
+    position: fixed;
+    top: 600px;
+    left: 150px;
+}
+
+#WelcomeLogin{
+    position: fixed;
+    top: 600px;
+    right: 150px;
+}
 
 .heading {
     alignment: center;
@@ -73,7 +124,16 @@
     top: 175px;
     right: 35px;
 }
-#Logo{
+#LogoNav{
+    position: fixed;
     border: 5px solid #555;
     border-radius: 12px;
+    top: 35px;
+    right: 35.75%;
+}
+#LogoWelcome{
+    border: 5px solid #555;
+    border-radius: 12px;
+    top: 50px;
+    right: 35.75%;
 }

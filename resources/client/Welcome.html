@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToRegister() {
+            console.log("Invoked goToRegister() ");
+            window.open("Register.html", "_self");
+        }
+        function goToLogin() {
+            console.log("Invoked goToLogin() ");
+            window.open("Login.html", "_self");
+        }
+    </script>
+</head>
+<body>
+<div class="headerWelcome">
+    <img src="FitForTheFuture.png" id="LogoWelcome" height="309px" width="619px"/>
+</div>
+
+<div class="mainSectionWelcome">
+    <button class="WelcomeButton" id="WelcomeRegister" onclick='goToRegister()'>Register</button>
+    <button class="WelcomeButton" id="WelcomeLogin" onclick='goToLogin()'>Login</button>
+</div>
+
+</body>
+</html>
