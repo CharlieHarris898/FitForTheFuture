@@ -2,46 +2,45 @@ package controllers;
 
 import server.Main;
 
-import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.json.simple.JSONObject;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Cookie;
-import javax.ws.rs.core.MediaType;
-import java.io.*;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.UUID;
+
 import static server.Convertor.convertToJSONObject;
 
-@Path("userInformation/")
+
+@Path("userinformation/")
 public class UserInformation {
+
     @POST
     @Path("login")
     public String loginUser(@FormDataParam("Username") String username, @FormDataParam("Password") String password) {
         System.out.println("Invoked loginUser() on path userInformation/login");
         try {
-            PreparedStatement ps1 = Main.db.prepareStatement("SELECT Password FROM UserInformation WHERE Username = ?");
-            ps1.setString(1, username);
-            ResultSet loginResults = ps1.executeQuery();
-            if (loginResults.next() == true) {
-                String correctPassword = loginResults.getString(1);
-                if (password.equals(correctPassword)) {
-                    String token = UUID.randomUUID().toString();
-                    PreparedStatement ps2 = Main.db.prepareStatement("UPDATE UserInformation SET Token = ? WHERE Username = ?");
-                    ps2.setString(1, token);
-                    ps2.setString(2, username);
-                    ps2.executeUpdate();
-                    JSONObject userDetails = new JSONObject();
-                    userDetails.put("username", username);
-                    userDetails.put("token", token);
-                    return userDetails.toString();
-                } else {
-                    return "{\"Error\": \"Incorrect password!\"}";
-                }
+            PreparedStatement statement = Main.db.prepareStatement("SELECT UserID FROM UserInformation WHERE Username = ? AND Password = ?");
+            statement.setString(1, username);
+            statement.setString(2, password);
+            ResultSet results = statement.executeQuery();
+            //if there is not record with this email and password, condition below will be false
+            if (results.next() == false) {
+                return "{\"Error\": \"Username or password is incorrect.  Are you sure you've registered? \"}";
             } else {
-                return "{\"Error\": \"Username and password are incorrect.\"}";
+                int userID = results.getInt("UserID");          //take the userId from the record returned in results
+                String token = UUID.randomUUID().toString();                 //create a unique ID for session
+
+                if (isTokenSetInDB(userID, token) == true) {   //store token for the user in the database
+                    JSONObject cookie = new JSONObject();
+                    cookie.put("token", token);
+                    return cookie.toString();
+                } else {
+                    return "{\"Error\": \"Something as gone wrong.  Please contact the administrator with the error code UC-UL. \"}";
+                }
             }
         } catch (Exception exception) {
             System.out.println("Database error during /userInformation/login: " + exception.getMessage());
@@ -149,6 +148,22 @@ public class UserInformation {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return "{\"Error\": \"Something as gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
+        }
+    }
+
+    private static boolean isTokenSetInDB(int userID, String token) {
+        System.out.println("Invoked isTokenSetInDB()");
+
+        try {
+            PreparedStatement statement = Main.db.prepareStatement("UPDATE UserInformation SET Token = ? WHERE UserID = ?"
+            );
+            statement.setString(1, token);
+            statement.setInt(2, userID);
+            statement.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
         }
     }
 
