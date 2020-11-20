@@ -11,10 +11,16 @@ import javax.ws.rs.core.Cookie;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.UUID;
+
 import static server.Convertor.convertToJSONObject;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 @Path("userinformation/")
 public class UserInformation {
+
     @POST
     @Path("login")
     public String loginUser(@FormDataParam("Username") String username, @FormDataParam("Password") String password) {
@@ -154,6 +160,23 @@ public class UserInformation {
 
     private static boolean isTokenSetInDB(int userID, String token) {
         System.out.println("Invoked isTokenSetInDB()");
+<<<<<<< HEAD
+=======
+
+        try {
+            PreparedStatement statement = Main.db.prepareStatement("UPDATE UserInformation SET Token = ? WHERE UserID = ?"
+            );
+            statement.setString(1, token);
+            statement.setInt(2, userID);
+            statement.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+>>>>>>> origin/master
 
         try {
             PreparedStatement statement = Main.db.prepareStatement("UPDATE UserInformation SET Token = ? WHERE UserID = ?"
