@@ -125,16 +125,42 @@
     top: 175px;
     right: 35px;
 }
-#LogoNav{
+.UserButton {
+    padding: 5px;
+    background: lightskyblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 600px;
+    height: 250px;
+    font-size: 60px;
+    border: 5px solid darkblue;
+}
+.UserButton:hover{background: dodgerblue; color: white}
+
+#ViewUser{
     position: fixed;
+    top: 600px;
+    left: 150px;
+}
+
+#UpdateUser{
+    position: fixed;
+    top: 600px;
+    right: 150px;
+}
+
+#LogoNav{
+    position: absolute;
     border: 5px solid #555;
     border-radius: 12px;
-    top: 35px;
-    right: 35.75%;
+    left:37.5%;
+    right:35%;
+    top: 25%;
 }
 #LogoWelcome{
     border: 5px solid #555;
     border-radius: 12px;
     top: 50px;
-    right: 35.75%;
+    alignment: center;
 }

@@ -28,6 +28,14 @@
         console.log("Invoked goToInfo() ");
         window.open("User Information.html", "_self");
     }
+    function goToUpdateUser() {
+        console.log("Invoked goToUpdateUser() ");
+        window.open("Update User.html", "_self");
+    }
+    function goToViewUser() {
+        console.log("Invoked goToViewUser() ");
+        window.open("View User.html", "_self");
+    }
 </script>
 
 </head>
@@ -36,7 +44,7 @@
     <button class="NavButton" id="Home" onclick='goToHome();'>Home</button>
     <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
     <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
-    <img src="FitForTheFuture.png" id="LogoNav" height="275px" width="550px"/>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
     <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
     <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
     <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
@@ -44,6 +52,8 @@
 
 <div class="mainSection">
     <h1 class="heading" style="font-size: 60px";>User Information</h1>
+    <button class="UserButton" id="UpdateUser" onclick='goToUpdateUser();'>Update Your Information</button>
+    <button class="UserButton" id="ViewUser" onclick='goToViewUser();'>View Your Information</button>
 </div>
 </body>
 </html>

@@ -1,15 +1,19 @@
 package controllers;
 
-import org.glassfish.jersey.media.multipart.FormDataParam;
-import org.json.simple.JSONObject;
 import server.Main;
 
-import javax.ws.rs.CookieParam;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.json.simple.JSONObject;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.Cookie;
+import javax.ws.rs.core.MediaType;
+import java.io.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.UUID;
+import static server.Convertor.convertToJSONObject;
 
 @Path("userInformation/")
 public class UserInformation {
@@ -46,6 +50,8 @@ public class UserInformation {
     }
 
 
+
+
     public static boolean validToken(String token) {		// this method MUST be called before any data is returned to the browser
         // token is taken from the Cookie sent back automatically with every HTTP request
         try {
@@ -58,6 +64,10 @@ public class UserInformation {
             return false;
         }
     }
+
+
+
+
     @POST
     @Path("add")
     public String UserInformationAdd(@FormDataParam("Username") String username, @FormDataParam("Password") String password, @FormDataParam("Gender") String gender, @FormDataParam("DOB") String dob, @FormDataParam("Height") Integer height, @FormDataParam("Weight") Integer weight){
@@ -92,7 +102,55 @@ public class UserInformation {
             System.out.println("Database error: " + exception.getMessage());
             return "{\"Error\": \"Sorry, something went wrong making your account, please try again.\"}";
             }
-
     }
+
+
+
+    public static int validateToken(Cookie Token) {     //returns the userID that of the record with the cookie value
+
+        String uuid = Token.getValue();
+        System.out.println("Invoked User.validateToken(), Token value: " + uuid);
+
+        try {
+            PreparedStatement statement = Main.db.prepareStatement(
+                    "SELECT UserID FROM UserInformation WHERE Token = ?"
+            );
+            statement.setString(1, uuid);
+            ResultSet resultSet = statement.executeQuery();
+            System.out.println("UserID is " + resultSet.getInt("UserID"));
+            return resultSet.getInt("UserID");  //Retrieve by column name  (should really test we only get one result back!)
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return -1;  //rogue value indicating error
+
+        }
+    }
+
+    @GET
+    @Path("getUser")
+    public String getUser(@CookieParam("sessionToken") Cookie Token) {
+
+        System.out.println("Invoked User.userGet()");
+
+        if (Token == null) {
+            return "{\"Error\": \"Something as gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
+        }
+
+        try {
+            String uuid = Token.getValue();
+            PreparedStatement statement = Main.db.prepareStatement(
+                    "SELECT * FROM Users WHERE UUID = ?"
+            );
+            statement.setString(1, uuid);
+            ResultSet resultSet = statement.executeQuery();
+            JSONObject resultsJSON = convertToJSONObject(resultSet);
+            return resultsJSON.toString();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return "{\"Error\": \"Something as gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
+        }
+    }
+
 
 }
