@@ -3,8 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>View User Info</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+        function goToUpdateUser() {
+            console.log("Invoked goToUpdateUser() ");
+            window.open("Update User.html", "_self");
+        }
+        function goToViewUser() {
+            console.log("Invoked goToViewUser() ");
+            window.open("View User.html", "_self");
+        }
+        function getUserInfo() {
+            console.log("Invoked getUserInfo()");		//console.log your BFF for debugging client side
+
+            const url = "/userinformation/getUser/";	// API method on webserver will be in Weight class with @Path of list
+
+            fetch(url, {
+                method: "GET",
+            }).then(response => {
+                return response.json();                 //return response to JSON
+        }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+            } else {
+                    console.log(response.toString());
+               fillUserForm(response);
+            }
+        });
+        }
+        function fillUserForm(data) {
+            console.log("invoked fillUserForm()");
+            console.log(data);
+
+            //put the values returned into the form fields
+            document.getElementById("Username").value = data.Username;
+            document.getElementById("Password").value = data.Password;
+            document.getElementById("Gender").value = data.Gender;
+            document.getElementById("DOB").value = data.DOB;
+            document.getElementById("Height").value = data.Height;
+            document.getElementById("Weight").value = data.Weight;
+            document.getElementById("LastLogin").value = data.LastLogin;
+            document.getElementById("LastEntry").value= data.LastEntry;
+
+        }
+        let myJSONArray = [
+            {"username": "Username||", "password": "Password||", "gender": "Gender||", "dob": "DOB||", "height": "Height||", "weight": "Weight||", "lastLogin": "Last login||", "lastEntry": "Last Entry||"},
+            {"username": data.Username, "password": data.Password, "gender": data.Gender, "dob": data.DOB, "height": data.Height, "weight": data.Weight, "lastLogin": data.LastLogin, "lastEntry": data.LastEntry}
+        ];
+        dataHTML = "";
+        for (let item of myJSONArray) {
+            dataHTML += "<tr><td>" + item.username + "</td><td>" + item.password + "</td><td>" + item.gender + "</td><td>" + item.dob + "</td><td>" + item.height + "</td><td>" + item.weight + "</td><td>" + item.lastLogin + "</td><td>" + item.lastEntry + "</td></tr>";
+        }
+        document.getElementById("UserInfoTable").innerHTML += dataHTML;
+    </script>
 </head>
-<body>
+<body onload="getUserInfo()">
+<div class="header">
+    <button class="NavButton" id="Home" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="InfoSelected" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Your Info</h1>
+    <table id="crispTable"></table>
+</div>
 
 </body>
 </html>

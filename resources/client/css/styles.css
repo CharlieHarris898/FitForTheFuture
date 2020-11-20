@@ -100,30 +100,72 @@
     top: 25px;
     left: 200px;
 }
+#HomeSelected{
+    position: fixed;
+    top: 25px;
+    left: 200px;
+    background: #6efdff;
+    border: 5px solid #57c8c9;
+}
 #Calories{
     position: fixed;
     top: 175px;
     left: 35px;
+}
+#CaloriesSelected{
+    position: fixed;
+    top: 175px;
+    left: 35px;
+    background: #6efdff;
+    border: 5px solid #57c8c9;
 }
 #Info{
     position: fixed;
     top: 175px;
     left: 365px;
 }
+#InfoSelected{
+    position: fixed;
+    top: 175px;
+    left: 365px;
+    background: #6efdff;
+    border: 5px solid #57c8c9;
+}
 #FoodInfo{
     position: fixed;
     top: 25px;
     right: 200px;
+}
+#FoodInfoSelected{
+    position: fixed;
+    top: 25px;
+    right: 200px;
+    background: #6efdff;
+    border: 5px solid #57c8c9;
 }
 #Recipes{
     position: fixed;
     top: 175px;
     right: 365px;
 }
+#RecipesSelected{
+    position: fixed;
+    top: 175px;
+    right: 365px;
+    background: #6efdff;
+    border: 5px solid #57c8c9;
+}
 #Exercises{
     position: fixed;
     top: 175px;
     right: 35px;
+}
+#ExercisesSelected{
+    position: fixed;
+    top: 175px;
+    right: 35px;
+    background: #6efdff;
+    border: 5px solid #57c8c9;
 }
 .UserButton {
     padding: 5px;
