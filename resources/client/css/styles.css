@@ -227,3 +227,17 @@
     font-weight: bold;
     color: navy;
 }
+
+.UpdateButton{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 30px;
+    border: 2px solid deepskyblue;
+}
+
+.UpdateButton:hover{background: lightblue; color: black}

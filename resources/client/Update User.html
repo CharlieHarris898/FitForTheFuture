@@ -101,7 +101,7 @@
                 if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
                     alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
                 } else {
-                    alert(response);                          }
+                    alert("Updated Username // Refresh page to see changes");                          }
             });
 
 
@@ -128,32 +128,32 @@
         <tr>
             <td id="firstColumn">Username:</td>
             <td id="secondColumn"><div id="Username"></div></td>
-            <td><button onclick='updateUsername()'>UPDATE</button></td>
+            <td><button class="UpdateButton" onclick='updateUsername()'>UPDATE</button></td>
         </tr>
         <tr>
             <td id="firstColumn">Password:</td>
             <td id="secondColumn"><div id="Password"></div></td>
-            <td><button onclick='updatePassword()'>UPDATE</button></td>
+            <td><button class="UpdateButton" onclick='updatePassword()'>UPDATE</button></td>
         </tr>
         <tr>
             <td id="firstColumn">Gender:</td>
             <td id="secondColumn"><div id="Gender"></div></td>
-            <td><button onclick='updateGender()'>UPDATE</button></td>
+            <td><button class="UpdateButton" onclick='updateGender()'>UPDATE</button></td>
         </tr>
         <tr>
             <td id="firstColumn">DOB:</td>
             <td id="secondColumn"><div id="DOB"></div></td>
-            <td><button onclick='updateDOB()'>UPDATE</button></td>
+            <td><button class="UpdateButton" onclick='updateDOB()'>UPDATE</button></td>
         </tr>
         <tr>
             <td id="firstColumn">Height (cm):</td>
             <td id="secondColumn"><div id="Height"></div></td>
-            <td><button onclick='updateHeight()'>UPDATE</button></td>
+            <td><button class="UpdateButton" onclick='updateHeight()'>UPDATE</button></td>
         </tr>
         <tr>
             <td id="firstColumn">Weight (kg):</td>
             <td id="secondColumn"><div id="Weight"></div></td>
-            <td><button onclick='updateWeight()'>UPDATE</button></td>
+            <td><button class="UpdateButton" onclick='updateWeight()'>UPDATE</button></td>
         </tr>
         <tr>
             <td id="firstColumn">Last Login:</td>
