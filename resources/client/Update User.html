@@ -91,8 +91,20 @@
         function updateUsername(){
             let newName = prompt("Enter your new Username");
 
-            const url = "/userinformation/updateusername";
-            fetch(url + newName, {method: "POST",});
+            const url = "/userinformation/updateusername/";
+
+            fetch(url + newName, {        			// dateEaten as path param
+                method: "POST",
+            }).then(response => {
+                return response.json();                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    alert(response);                          }
+            });
+
+
         }
 
 
