@@ -57,28 +57,17 @@
         }
         function fillUserForm(data) {
             console.log("invoked fillUserForm()");
-            console.log(data);
 
-            //put the values returned into the form fields
-            document.getElementById("Username").value = data.Username;
-            document.getElementById("Password").value = data.Password;
-            document.getElementById("Gender").value = data.Gender;
-            document.getElementById("DOB").value = data.DOB;
-            document.getElementById("Height").value = data.Height;
-            document.getElementById("Weight").value = data.Weight;
-            document.getElementById("LastLogin").value = data.LastLogin;
-            document.getElementById("LastEntry").value= data.LastEntry;
+            document.getElementById("Username").innerHTML = data.Username;
+            document.getElementById("Password").innerHTML = data.Password;
+            document.getElementById("Gender").innerHTML = data.Gender;
+            document.getElementById("DOB").innerHTML = data.DOB;
+            document.getElementById("Height").innerHTML = data.Height;
+            document.getElementById("Weight").innerHTML = data.Weight;
+            document.getElementById("LastLogin").innerHTML = data.LastLogin;
+            document.getElementById("LastEntry").innerHTML= data.LastEntry;
 
         }
-        let myJSONArray = [
-            {"username": "Username||", "password": "Password||", "gender": "Gender||", "dob": "DOB||", "height": "Height||", "weight": "Weight||", "lastLogin": "Last login||", "lastEntry": "Last Entry||"},
-            {"username": data.Username, "password": data.Password, "gender": data.Gender, "dob": data.DOB, "height": data.Height, "weight": data.Weight, "lastLogin": data.LastLogin, "lastEntry": data.LastEntry}
-        ];
-        dataHTML = "";
-        for (let item of myJSONArray) {
-            dataHTML += "<tr><td>" + item.username + "</td><td>" + item.password + "</td><td>" + item.gender + "</td><td>" + item.dob + "</td><td>" + item.height + "</td><td>" + item.weight + "</td><td>" + item.lastLogin + "</td><td>" + item.lastEntry + "</td></tr>";
-        }
-        document.getElementById("UserInfoTable").innerHTML += dataHTML;
     </script>
 </head>
 <body onload="getUserInfo()">
@@ -94,7 +83,40 @@
 
 <div class="mainSection">
     <h1 class="heading" style="font-size: 60px";>Your Info</h1>
-    <table id="crispTable"></table>
+    <table class="UserInfoTable">
+        <tr>
+            <td id="firstColumn">Username:</td>
+            <td id="secondColumn"><div id="Username"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Password:</td>
+            <td id="secondColumn"><div id="Password"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Gender:</td>
+            <td id="secondColumn"><div id="Gender"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">DOB:</td>
+            <td id="secondColumn"><div id="DOB"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Height (cm):</td>
+            <td id="secondColumn"><div id="Height"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Weight (kg):</td>
+            <td id="secondColumn"><div id="Weight"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Last Login:</td>
+            <td id="secondColumn"><div id="LastLogin"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Last Calorie Entry:</td>
+            <td id="secondColumn"><div id="Last Entry"></div></td>
+        </tr>
+    </table>
 </div>
 
 </body>

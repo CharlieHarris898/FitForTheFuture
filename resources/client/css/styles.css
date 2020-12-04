@@ -206,3 +206,24 @@
     top: 50px;
     alignment: center;
 }
+
+.UserInfoTable{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid darkslateblue;
+    border-radius: 12px;
+    font-size: 30px;
+
+    font-family: "Rockwell", serif;
+}
+
+#firstColumn{
+    font-weight: bolder;
+    color: black;
+}
+
+#secondColumn{
+    font-weight: bold;
+    color: navy;
+}

@@ -14,10 +14,8 @@ import java.util.UUID;
 
 import static server.Convertor.convertToJSONObject;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
+
 @Path("userinformation/")
 public class UserInformation {
 
@@ -160,8 +158,6 @@ public class UserInformation {
 
     private static boolean isTokenSetInDB(int userID, String token) {
         System.out.println("Invoked isTokenSetInDB()");
-<<<<<<< HEAD
-=======
 
         try {
             PreparedStatement statement = Main.db.prepareStatement("UPDATE UserInformation SET Token = ? WHERE UserID = ?"
@@ -176,18 +172,25 @@ public class UserInformation {
         }
     }
 
->>>>>>> origin/master
-
+    @POST
+    @Path("updateusername/{newName}")
+    public String updateUsername(@PathParam("newName") String username, @CookieParam("token") Cookie token){
+        System.out.println("Invoked userInformation.updateUsername()");
+        int userID = validateToken(token);
+        if (userID == -1){
+            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+        }
         try {
-            PreparedStatement statement = Main.db.prepareStatement("UPDATE UserInformation SET Token = ? WHERE UserID = ?"
-            );
-            statement.setString(1, token);
-            statement.setInt(2, userID);
-            statement.executeUpdate();
-            return true;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return false;
+            PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET Username = ? WHERE UserID = ?");
+            ps.setString(1, username);
+            ps.setInt(2, userID);
+            ps.execute();
+            return "{\"OK\": \"Updated Username.\"}";
+        }
+        catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Error updating username. Possible Error: username ealready taken.\"}";
+
         }
     }
 }
