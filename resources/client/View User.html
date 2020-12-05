@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <title>View User Info</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
     <script>
         function goToHome() {
             console.log("Invoked goTohome() ");
@@ -38,7 +55,7 @@
             window.open("View User.html", "_self");
         }
         function getUserInfo() {
-            console.log("Invoked getUserInfo()");		//console.log your BFF for debugging client side
+            console.log("Invoked getUserInfo()");
 
             const url = "/userinformation/getUser/";	// API method on webserver will be in Weight class with @Path of list
 
@@ -81,7 +98,7 @@
     <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
 </div>
 
-<div class="mainSection">
+<div class="mainSection" id="scroll">
     <h1 class="heading" style="font-size: 60px";>Your Info</h1>
     <table class="UserInfoTable">
         <tr>

@@ -133,12 +133,12 @@ public class UserInformation {
         System.out.println("Invoked User.userGet()");
         int userID;
         if (token == null) {
-            return "{\"Error\": \"Something as gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
+            return "{\"Error\": \"Something has gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
         } else{
             userID=validateToken(token);
         }
         if (userID == -1){
-            return "{\"Error\": \"Something as gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
+            return "{\"Error\": \"Something has gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
         }
 
         try {
@@ -175,7 +175,7 @@ public class UserInformation {
     @POST
     @Path("updateusername/{newName}")
     public String updateUsername(@PathParam("newName") String username, @CookieParam("token") Cookie token){
-        System.out.println("Invoked userInformation.updateUsername()");
+        System.out.println("Invoked userInformation.updateusername()");
         int userID = validateToken(token);
         if (userID == -1){
             return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
@@ -190,6 +190,69 @@ public class UserInformation {
         catch (Exception exception) {
             System.out.println("Database error: " + exception.getMessage());
             return "{\"Error\": \"Error updating username. Possible Error: username ealready taken.\"}";
+
+        }
+    }
+    @POST
+    @Path("updatepassword/{newPassword}")
+    public String updatePassword(@PathParam("newPassword") String password, @CookieParam("token") Cookie token){
+        System.out.println("Invoked userInformation.updatepassword()");
+        int userID = validateToken(token);
+        if (userID == -1){
+            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+        }
+        try {
+            PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET Password = ? WHERE UserID = ?");
+            ps.setString(1, password);
+            ps.setInt(2, userID);
+            ps.execute();
+            return "{\"OK\": \"Updated Password.\"}";
+        }
+        catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Error updating password.\"}";
+
+        }
+    }
+    @POST
+    @Path("updategender/{newGender}")
+    public String updateGender(@PathParam("newGender") String gender, @CookieParam("token") Cookie token){
+        System.out.println("Invoked userInformation.updategender()");
+        int userID = validateToken(token);
+        if (userID == -1){
+            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+        }
+        try {
+            PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET Gender = ? WHERE UserID = ?");
+            ps.setString(1, gender);
+            ps.setInt(2, userID);
+            ps.execute();
+            return "{\"OK\": \"Updated Gender.\"}";
+        }
+        catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Error updating Gender.\"}";
+
+        }
+    }
+    @POST
+    @Path("updateDOB/{newDOB}")
+    public String updateDOB(@PathParam("newDOB") String dob, @CookieParam("token") Cookie token){
+        System.out.println("Invoked userInformation.updategender()");
+        int userID = validateToken(token);
+        if (userID == -1){
+            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+        }
+        try {
+            PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET DOB = ? WHERE UserID = ?");
+            ps.setString(1, dob);
+            ps.setInt(2, userID);
+            ps.execute();
+            return "{\"OK\": \"Updated DOB.\"}";
+        }
+        catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Error updating DOB.\"}";
 
         }
     }

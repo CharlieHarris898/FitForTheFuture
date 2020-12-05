@@ -8,7 +8,7 @@
     background: azure;
     color: white;
     font-family: "Rockwell", serif;
-    border: 5px solid black
+    border: 5px solid black;
 }
 .headerWelcome {
     padding: 80px;
@@ -28,11 +28,11 @@
     background: aliceblue;
     position: fixed;
     top: 400px;
-    height: 1000px;
+    height: 550px;
     bottom: 25px;
     left:25px;
     right:25px;
-    border: 5px solid black
+    border: 5px solid black;
 }
 
 .mainSectionWelcome {
@@ -241,3 +241,25 @@
 }
 
 .UpdateButton:hover{background: lightblue; color: black}
+
+#scroll {
+     border: 5px solid black;
+     padding: 5px;
+     font: 24px/36px sans-serif;;
+     overflow: scroll;
+ }
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+::-webkit-scrollbar-track {
+    border: 1px solid yellowgreen;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: yellowgreen;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #88ba1c;
+}
