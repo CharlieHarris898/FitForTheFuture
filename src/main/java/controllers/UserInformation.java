@@ -175,7 +175,7 @@ public class UserInformation {
     @POST
     @Path("updateusername/{newName}")
     public String updateUsername(@PathParam("newName") String username, @CookieParam("token") Cookie token){
-        System.out.println("Invoked userInformation.updateusername()");
+        System.out.println("Invoked userInformation.updateUsername()");
         int userID = validateToken(token);
         if (userID == -1){
             return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
@@ -196,7 +196,7 @@ public class UserInformation {
     @POST
     @Path("updatepassword/{newPassword}")
     public String updatePassword(@PathParam("newPassword") String password, @CookieParam("token") Cookie token){
-        System.out.println("Invoked userInformation.updatepassword()");
+        System.out.println("Invoked userInformation.updatePassword()");
         int userID = validateToken(token);
         if (userID == -1){
             return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
@@ -217,7 +217,7 @@ public class UserInformation {
     @POST
     @Path("updategender/{newGender}")
     public String updateGender(@PathParam("newGender") String gender, @CookieParam("token") Cookie token){
-        System.out.println("Invoked userInformation.updategender()");
+        System.out.println("Invoked userInformation.updateGender()");
         int userID = validateToken(token);
         if (userID == -1){
             return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
@@ -238,7 +238,7 @@ public class UserInformation {
     @POST
     @Path("updateDOB/{newDOB}")
     public String updateDOB(@PathParam("newDOB") String dob, @CookieParam("token") Cookie token){
-        System.out.println("Invoked userInformation.updategender()");
+        System.out.println("Invoked userInformation.updateDOB()");
         int userID = validateToken(token);
         if (userID == -1){
             return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
@@ -253,6 +253,48 @@ public class UserInformation {
         catch (Exception exception) {
             System.out.println("Database error: " + exception.getMessage());
             return "{\"Error\": \"Error updating DOB.\"}";
+
+        }
+    }
+    @POST
+    @Path("updateheight/{newHeight}")
+    public String updateHeight(@PathParam("newHeight") String height, @CookieParam("token") Cookie token){
+        System.out.println("Invoked userInformation.updateHeight()");
+        int userID = validateToken(token);
+        if (userID == -1){
+            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+        }
+        try {
+            PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET Height = ? WHERE UserID = ?");
+            ps.setString(1, height);
+            ps.setInt(2, userID);
+            ps.execute();
+            return "{\"OK\": \"Updated Height.\"}";
+        }
+        catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Error updating Height.\"}";
+
+        }
+    }
+    @POST
+    @Path("updateweight/{newWeight}")
+    public String updateWeight(@PathParam("newWeight") String weight, @CookieParam("token") Cookie token){
+        System.out.println("Invoked userInformation.updateWeight()");
+        int userID = validateToken(token);
+        if (userID == -1){
+            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+        }
+        try {
+            PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET Weight = ? WHERE UserID = ?");
+            ps.setString(1, weight);
+            ps.setInt(2, userID);
+            ps.execute();
+            return "{\"OK\": \"Updated Weight.\"}";
+        }
+        catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Error updating Weight.\"}";
 
         }
     }

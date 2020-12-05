@@ -93,9 +93,11 @@
             });
         }
         function updateGender(){
-            let newGender = prompt("Enter your new Gender, only using the letters: 'm', 'f', or 'o'");
+            console.log("updateGender() Invoked");
+            let newGender = prompt("Enter your new Gender, only using: 'Male', 'Female', or 'Other'");
+            newGender = newGender.charAt(0).toUpperCase() + newGender.slice(1)
+            if ((newGender == 'Male')||(newGender == 'Female')||(newGender == 'Other')) {
 
-            if ((newGender == 'm')||(newGender == 'f')||(newGender == 'o')) {
                 const url = "/userinformation/updategender/";
 
                 fetch(url + newGender, {
@@ -116,12 +118,12 @@
             }
         }
         // function updateDOB() {
-        //     let newDOB = prompt("Enter your new DOB, using the format YYYY/MM/DD only");
+        //     let newDOB = prompt("Enter your new DOB, using the format YYYY-MM-DD only");
         //
-        //     if ((newDOB.charAt(5) == '/')&&(newDOB.charAt(8) == '/')){
-        //         let monthCheck = ((newDOB.charAt(6)) + (newDOB.charAt(7)));
+        //     if ((newDOB.charAt(4) == '-')&&(newDOB.charAt(7) == '-')){
+        //         let monthCheck = ((newDOB.charAt(5)) + (newDOB.charAt(6)));
         //         if ((monthCheck == '01')||(monthCheck == '02')||(monthCheck == '03')||(monthCheck == '04')||(monthCheck == '05')||(monthCheck == '06')||(monthCheck == '07')||(monthCheck == '08')||(monthCheck == '09')||(monthCheck == '10')||(monthCheck == '11')||(monthCheck == '12')){
-        //             let dayCheck = ((newDOB.charAt(9) + (newDOB.charAt(10)));
+        //             let dayCheck = ((newDOB.charAt(8) + (newDOB.charAt(9)));
         //             if ((dayCheck == '01')||(dayCheck == '02')||(dayCheck == '03')||(dayCheck == '04')||(dayCheck == '05')||(dayCheck == '06')||(dayCheck == '07')||(dayCheck == '08')||(dayCheck == '09')||(dayCheck == '10')||(dayCheck == '11')||(dayCheck == '12')||(dayCheck == '13')||(dayCheck == '14')||(dayCheck == '15')||(dayCheck == '16')||(dayCheck == '17')||(dayCheck == '18')||(dayCheck == '19')||(dayCheck == '20')||(dayCheck == '21')||(dayCheck == '22')||(dayCheck == '23')||(dayCheck == '24')||(dayCheck == '25')||(dayCheck == '26')||(dayCheck == '27')||(dayCheck == '28')||(dayCheck == '29')||(dayCheck == '30')||(dayCheck == '31')){
         //
         //                 const url = "/userinformation/updatedob/";

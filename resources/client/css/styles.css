@@ -253,13 +253,13 @@
     height: 12px;
 }
 ::-webkit-scrollbar-track {
-    border: 1px solid yellowgreen;
+    border: 1px solid white;
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background: yellowgreen;
+    background: white
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #88ba1c;
+    background: darkblue;
 }
