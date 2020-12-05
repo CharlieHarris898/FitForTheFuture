@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Update User Info</title>
     <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.js"> </script>
     <script>
         function goToHome() {
             console.log("Invoked goTohome() ");
@@ -117,8 +119,20 @@
                 return;
             }
         }
+
+
+        function updateDOB(){
+            let newDOB = prompt("Enter your new DOB, using the format YYYY-MM-DD only");
+            alert(moment(newDOB, 'YYYY-MM-DD',true).isValid()); //returns true if valid, false if not
+
+            //see  https://stackoverflow.com/questions/6177975/how-to-validate-date-with-format-mm-dd-yyyy-in-javascript
+
+
+
+        }
         // function updateDOB() {
         //     let newDOB = prompt("Enter your new DOB, using the format YYYY-MM-DD only");
+
         //
         //     if ((newDOB.charAt(4) == '-')&&(newDOB.charAt(7) == '-')){
         //         let monthCheck = ((newDOB.charAt(5)) + (newDOB.charAt(6)));
