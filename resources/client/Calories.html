@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calorie Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+
+        function calculateCalories{
+            console.log("Invoked calculateCalories()");
+
+            const formData = new FormData(document.getElementById('calculatorForm'));
+            var url = "/calories/getLowCalories/";
+
+            fetch(url, {
+                method: "GET",
+            }).then(response => {
+                return response.json();                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    console.log(response.toString());
+                }
+            });
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="Home" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="CaloriesSelected" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Calorie Calculator</h1>
+    <h2 class="heading" style="font-size: 45px";> Input info here:</h2>
+    <form id="calculatorForm">
+        <p>Type of Exercise:</p>
+        <input type="radio" id="treadmillRunning" name="Exercise" value="treadmillRunning">
+        <label for="treadmillRunning">Treadmill (Running)</label><br>
+        <input type="radio" id="swimmingFrontCrawl" name="Exercise" value="swimmingFrontCrawl">
+        <label for="swimmingFrontCrawl">Swimming (Front Crawl)</label><br>
+        <input type="radio" id="swimmingBreaststroke" name="Exercise" value="swimmingBreaststroke">
+        <label for="swimmingBreaststroke">Swimming (Breaststroke</label><br>
+        <input type="radio" id="cycling" name="Exercise" value="cycling">
+        <label for="cycling">Cycling</label><br>
+        <input type="radio" id="football" name="Exercise" value="football">
+        <label for="football">Football</label><br>
+        <input type="radio" id="rowing" name="Exercise" value="rowing">
+        <label for="rowing">Rowing</label><br>
+        <input type="radio" id="pushups" name="Exercise" value="pushups">
+        <label for="pushups">Pushups</label><br>
+        <input type="radio" id="squats" name="Exercise" value="squats">
+        <label for="squats">Squats</label><br>
+        <input type="radio" id="aerobics" name="Exercise" value="aerobics">
+        <label for="aerobics">Aerobics</label><br>
+
+        <p>Intensity:</p>
+        <input type="radio" id="low" name="Intensity" value="low">
+        <label for="low">Low</label><br>
+        <input type="radio" id="medium" name="Intensity" value="medium">
+        <label for="medium">Medium</label><br>
+        <input type="radio" id="high" name="Intensity" value="high">
+        <label for="high">High</label>
+    </form>
+    <button onclick="calculateCalories()">Calculate</button>
+</div>
+</body>
+</html>

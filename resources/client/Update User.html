@@ -64,7 +64,9 @@
 
         function updateUsername(){
             let newName = prompt("Enter your new Username");
-
+            if (newName == null){
+                return;
+            }
             const url = "/userinformation/updateusername/";
 
             fetch(url + newName, {
@@ -80,7 +82,9 @@
         }
         function updatePassword(){
             let newPassword = prompt("Enter your new Password");
-
+            if (newPassword == null){
+                return;
+            }
             const url = "/userinformation/updatepassword/";
 
             fetch(url + newPassword, {
@@ -95,8 +99,10 @@
             });
         }
         function updateGender(){
-            console.log("updateGender() Invoked");
             let newGender = prompt("Enter your new Gender, only using: 'Male', 'Female', or 'Other'");
+            if (newGender == null){
+                return;
+            }
             newGender = newGender.charAt(0).toUpperCase() + newGender.slice(1)
             if ((newGender == 'Male')||(newGender == 'Female')||(newGender == 'Other')) {
 
@@ -121,57 +127,33 @@
         }
 
 
-        function updateDOB(){
+        function updateDOB() {
             let newDOB = prompt("Enter your new DOB, using the format YYYY-MM-DD only");
-            alert(moment(newDOB, 'YYYY-MM-DD',true).isValid()); //returns true if valid, false if not
+            if (newDOB == null){
+                return;
+            }
+            alert(moment(newDOB, 'YYYY-MM-DD', true).isValid());
+                const url = "/userinformation/updatedob/";
 
-            //see  https://stackoverflow.com/questions/6177975/how-to-validate-date-with-format-mm-dd-yyyy-in-javascript
-
-
-
+                fetch(url + newDOB, {
+                    method: "POST",
+                }).then(response => {
+                    return response.json();                 //return response to JSON
+                }).then(response => {
+                    if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                        alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                    } else {
+                        alert("Updated DOB // Refresh page to see changes");
+                    }
+                });
         }
-        // function updateDOB() {
-        //     let newDOB = prompt("Enter your new DOB, using the format YYYY-MM-DD only");
 
-        //
-        //     if ((newDOB.charAt(4) == '-')&&(newDOB.charAt(7) == '-')){
-        //         let monthCheck = ((newDOB.charAt(5)) + (newDOB.charAt(6)));
-        //         if ((monthCheck == '01')||(monthCheck == '02')||(monthCheck == '03')||(monthCheck == '04')||(monthCheck == '05')||(monthCheck == '06')||(monthCheck == '07')||(monthCheck == '08')||(monthCheck == '09')||(monthCheck == '10')||(monthCheck == '11')||(monthCheck == '12')){
-        //             let dayCheck = ((newDOB.charAt(8) + (newDOB.charAt(9)));
-        //             if ((dayCheck == '01')||(dayCheck == '02')||(dayCheck == '03')||(dayCheck == '04')||(dayCheck == '05')||(dayCheck == '06')||(dayCheck == '07')||(dayCheck == '08')||(dayCheck == '09')||(dayCheck == '10')||(dayCheck == '11')||(dayCheck == '12')||(dayCheck == '13')||(dayCheck == '14')||(dayCheck == '15')||(dayCheck == '16')||(dayCheck == '17')||(dayCheck == '18')||(dayCheck == '19')||(dayCheck == '20')||(dayCheck == '21')||(dayCheck == '22')||(dayCheck == '23')||(dayCheck == '24')||(dayCheck == '25')||(dayCheck == '26')||(dayCheck == '27')||(dayCheck == '28')||(dayCheck == '29')||(dayCheck == '30')||(dayCheck == '31')){
-        //
-        //                 const url = "/userinformation/updatedob/";
-        //
-        //                 fetch(url + newDOB, {
-        //                     method: "POST",
-        //                 }).then(response => {
-        //                     return response.json();                 //return response to JSON
-        //                 }).then(response => {
-        //                     if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
-        //                         alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
-        //                     } else {
-        //                         alert("Updated DOB // Refresh page to see changes");
-        //                     }
-        //                 });
-        //             }
-        //             else{
-        //                 alert("Invalid DOB Input");
-        //                 return;
-        //             }
-        //         }
-        //         else{
-        //             alert("Invalid DOB Input");
-        //             return;
-        //         }
-        //     }
-        //     else{
-        //         alert("Invalid DOB Input");
-        //         return;
-        //     }
-        // }
+
         function updateHeight(){
             let newHeight = prompt("Enter your new Height (cm)");
-
+            if (newHeight == null){
+                return;
+            }
             const url = "/userinformation/updateheight/";
 
             fetch(url + newHeight, {
@@ -187,7 +169,9 @@
         }
         function updateWeight(){
             let newWeight = prompt("Enter your new Weight");
-
+            if (newWeight == null){
+                return;
+            }
             const url = "/userinformation/updateweight/";
 
             fetch(url + newWeight, {
