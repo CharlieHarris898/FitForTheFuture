@@ -62,12 +62,12 @@
                 if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
                     alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
                 } else {
-                    console.log(response);
-                    var Time = document.getElementsByName("Time")[0].value;
+                    console.log(response.CalsPerMin);
+                    let calsPerMin = response.CalsPerMin;
+                    let time = document.getElementById("time").value;
+                    console.log(time);
 
-
-
-                    var caloriesBurnt = (response * 23);
+                    var caloriesBurnt = calsPerMin * time;
                     console.log(caloriesBurnt);
                 }
             });
@@ -119,7 +119,7 @@
         <label for="high">High</label>
 
         <p> Enter time spent on exercise (minutes):</p>
-        <input type="number" step="1" id="time" name="Time"><br>
+        <input type="number"  id="time" name="time"><br>
     </form>
     <button onclick="calculateCalories()">Calculate</button>
 </div>
