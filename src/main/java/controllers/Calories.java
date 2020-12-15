@@ -25,15 +25,18 @@ public class Calories{
     @Path("get")
     public String getLowCalories(@FormDataParam("Exercise") String exercise, @FormDataParam("Intensity") String intensity) {
 
-        System.out.println("Invoked Food.getFood() with foodID " + exercise);
+        System.out.println("Invoked Calories.getCaloriesPerMin() with Exercise Name " + exercise);
 
         String column = "";
         if (intensity.equals("low")) {
             column = "LowIntensityPerMin";
+            System.out.println("Low calories selected");
         }else if (intensity.equals("medium")) {
             column = "MedIntensityPerMin";
+            System.out.println("Medium calories selected");
         } else {
             column = "HighIntensityPerMin";
+            System.out.println("High calories selected");
         }
 
        String query = "SELECT " + column + " FROM Exercises WHERE ExerciseName = '" + exercise + "' ";
