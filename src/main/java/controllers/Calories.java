@@ -17,9 +17,11 @@ import static server.Convertor.convertToJSONObject;
 
 
 @Path("calories/")
+
 public class Calories{
+
     @GET
-    @Path("getLowCalories")
+    @Path("get/lowCalories")
     public String getLowCalories(@FormDataParam("Exercise") String exercise) {
         System.out.println("Invoked Food.getFood() with foodID " + exercise);
         try {

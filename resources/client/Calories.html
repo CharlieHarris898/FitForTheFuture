@@ -48,13 +48,20 @@
         }
 
         function calculateCalories(){
+            alert("Hello");
             console.log("Invoked calculateCalories()");
 
+            // var exerciseName = document.getElementsByName("Exercise").valueOf();
+            // var intensityChoice = document.getElementsByName("Intensity").valueOf();
+            // alert (exerciseName);
+            // alert (intensityChoice);
+
             const formData = new FormData(document.getElementById('calculatorForm'));
-            var url = "/calories/getLowCalories/";
+            var url = "/calories/get/lowCalories";
 
             fetch(url, {
                 method: "GET",
+                body: formData,
             }).then(response => {
                 return response.json();                 //return response to JSON
             }).then(response => {
@@ -84,24 +91,24 @@
     <h2 class="heading" style="font-size: 45px";> Input info here:</h2>
     <form id="calculatorForm">
         <p>Type of Exercise:</p>
-        <input type="radio" id="treadmillRunning" name="Exercise" value="treadmillRunning">
-        <label for="treadmillRunning">Treadmill (Running)</label><br>
-        <input type="radio" id="swimmingFrontCrawl" name="Exercise" value="swimmingFrontCrawl">
-        <label for="swimmingFrontCrawl">Swimming (Front Crawl)</label><br>
-        <input type="radio" id="swimmingBreaststroke" name="Exercise" value="swimmingBreaststroke">
-        <label for="swimmingBreaststroke">Swimming (Breaststroke</label><br>
-        <input type="radio" id="cycling" name="Exercise" value="cycling">
-        <label for="cycling">Cycling</label><br>
-        <input type="radio" id="football" name="Exercise" value="football">
-        <label for="football">Football</label><br>
-        <input type="radio" id="rowing" name="Exercise" value="rowing">
-        <label for="rowing">Rowing</label><br>
-        <input type="radio" id="pushups" name="Exercise" value="pushups">
-        <label for="pushups">Pushups</label><br>
-        <input type="radio" id="squats" name="Exercise" value="squats">
-        <label for="squats">Squats</label><br>
-        <input type="radio" id="aerobics" name="Exercise" value="aerobics">
-        <label for="aerobics">Aerobics</label><br>
+        <input type="radio" id="Treadmill (Runnning)" name="Exercise" value="Treadmill (Runnning)">
+        <label for="Treadmill (Runnning)">Treadmill (Running)</label><br>
+        <input type="radio" id="Swimming (Front Crawl)" name="Exercise" value="Swimming (Front Crawl)">
+        <label for="Swimming (Front Crawl)">Swimming (Front Crawl)</label><br>
+        <input type="radio" id="Swimming (Breaststroke)" name="Exercise" value="Swimming (Breaststroke)">
+        <label for="Swimming (Breaststroke)">Swimming (Breaststroke</label><br>
+        <input type="radio" id="Cycling" name="Exercise" value="Cycling">
+        <label for="Cycling">Cycling</label><br>
+        <input type="radio" id="Football" name="Exercise" value="Football">
+        <label for="Football">Football</label><br>
+        <input type="radio" id="Rowing" name="Exercise" value="Rowing">
+        <label for="Rowing">Rowing</label><br>
+        <input type="radio" id="Pushups" name="Exercise" value="Pushups">
+        <label for="Pushups">Pushups</label><br>
+        <input type="radio" id="Squats" name="Exercise" value="Squats">
+        <label for="Squats">Squats</label><br>
+        <input type="radio" id="Aerobics" name="Exercise" value="Aerobics">
+        <label for="Aerobics">Aerobics</label><br>
 
         <p>Intensity:</p>
         <input type="radio" id="low" name="Intensity" value="low">
