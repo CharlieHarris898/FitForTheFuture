@@ -10,6 +10,7 @@ import javax.ws.rs.core.Cookie;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.UUID;
 
 import static server.Convertor.convertToJSONObject;
@@ -20,63 +21,39 @@ import static server.Convertor.convertToJSONObject;
 
 public class Calories{
 
-    @GET
-    @Path("get/lowCalories")
-    public String getLowCalories(@FormDataParam("Exercise") String exercise) {
+    @POST
+    @Path("get")
+    public String getLowCalories(@FormDataParam("Exercise") String exercise, @FormDataParam("Intensity") String intensity) {
+
         System.out.println("Invoked Food.getFood() with foodID " + exercise);
-        try {
-            PreparedStatement ps = Main.db.prepareStatement("SELECT LowIntensityPerMin FROM Exercises WHERE ExerciseName = ?");
-            ps.setString(1, exercise);
-            ResultSet results = ps.executeQuery();
-            JSONObject response = new JSONObject();
-            if (results.next()== true) {
-                response.put("LowIntensityPerMin", results.getInt(1));
+
+        String column = "";
+        if (intensity.equals("low")) {
+            column = "LowIntensityPerMin";
+        }else if (intensity.equals("medium")) {
+            column = "MedIntensityPerMin";
+        } else {
+            column = "HighIntensityPerMin";
+        }
+
+       String query = "SELECT " + column + " FROM Exercises WHERE ExerciseName = '" + exercise + "' ";
+
+        int calsPerMin = 0;
+        try  ( Statement stmt = Main.db.createStatement() ){
+            ResultSet rs = stmt.executeQuery(query);
+
+            while (rs.next() == true) {
+                calsPerMin = rs.getInt(column);
             }
-            return response.toString();
+
+            return "{\"CalsPerMin\":"  + calsPerMin + "}";
+            //return "{\"CalsPerMin\":\"55\"}";
+
         } catch (Exception exception) {
             System.out.println("Database error: " + exception.getMessage());
             return "{\"Error\": \"Unable to retrieve information, please report to server admin.\"}";
         }
     }
-//    @GET
-//    @Path("getMedCalories")
-//    public String getMedCalories(@FormDataParam("Exercise") String exercise) {
-//        System.out.println("Invoked Food.getFood() with foodID " + exercise);
-//        try {
-//            PreparedStatement ps = Main.db.prepareStatement("SELECT MedIntensityPerMin FROM Exercises WHERE ExerciseName = ?");
-//            ps.setInt(1, exercise);
-//            ResultSet results = ps.executeQuery();
-//            JSONObject response = new JSONObject();
-//            if (results.next()== true) {
-//                response.put("FoodID", exercise);
-//                response.put("Name", results.getString(1));
-//                response.put("Quantity", results.getInt(2));
-//            }
-//            return response.toString();
-//        } catch (Exception exception) {
-//            System.out.println("Database error: " + exception.getMessage());
-//            return "{\"Error\": \"Unable to get item, please see server console for more info.\"}";
-//        }
-//    }
-//    @GET
-//    @Path("getHighCalories")
-//    public String getHighCalories(@FormDataParam("Exercise") String exercise) {
-//        System.out.println("Invoked Food.getFood() with foodID " + exercise);
-//        try {
-//            PreparedStatement ps = Main.db.prepareStatement("SELECT HighIntensityPerMin FROM Exercises WHERE ExerciseName = ?");
-//            ps.setInt(1, exercise);
-//            ResultSet results = ps.executeQuery();
-//            JSONObject response = new JSONObject();
-//            if (results.next()== true) {
-//                response.put("FoodID", exercise);
-//                response.put("Name", results.getString(1));
-//                response.put("Quantity", results.getInt(2));
-//            }
-//            return response.toString();
-//        } catch (Exception exception) {
-//            System.out.println("Database error: " + exception.getMessage());
-//            return "{\"Error\": \"Unable to get item, please see server console for more info.\"}";
-//        }
-//    }
+
 
 }

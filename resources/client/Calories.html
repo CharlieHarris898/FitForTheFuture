@@ -48,8 +48,7 @@
         }
 
         function calculateCalories(){
-            alert("Hello");
-            console.log("Invoked calculateCalories()");
+             console.log("Invoked calculateCalories()");
 
             // var exerciseName = document.getElementsByName("Exercise").valueOf();
             // var intensityChoice = document.getElementsByName("Intensity").valueOf();
@@ -57,10 +56,10 @@
             // alert (intensityChoice);
 
             const formData = new FormData(document.getElementById('calculatorForm'));
-            var url = "/calories/get/lowCalories";
+            var url = "/calories/get";
 
             fetch(url, {
-                method: "GET",
+                method: "POST",
                 body: formData,
             }).then(response => {
                 return response.json();                 //return response to JSON
@@ -68,7 +67,7 @@
                 if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
                     alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
                 } else {
-                    console.log(response.toString());
+                    console.log(response);
                 }
             });
         }
