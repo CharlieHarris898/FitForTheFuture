@@ -69,13 +69,98 @@
 
                     var caloriesBurnt = calsPerMin * time;
                     console.log(caloriesBurnt);
+                    getUserInfo();
+                    console.log(document.getElementById("Height").innerHTML);
+                    console.log(document.getElementById("Weight").innerHTML);
+                    var finalCaloriesBurnt = 0;
+                    if (document.getElementById("Height").innerHTML > 170){
+                        finalCaloriesBurnt = (caloriesBurnt * 1.1);
+                        console.log(finalCaloriesBurnt);
+                    }
+                    else if(document.getElementById("Height").innerHTML < 170){
+                        finalCaloriesBurnt = (caloriesBurnt * 0.9);
+                        console.log(finalCaloriesBurnt);
+                    }
+                    else{
+                        finalCaloriesBurnt = (caloriesBurnt);
+                        console.log(finalCaloriesBurnt);
+                    }
+                    if (document.getElementById("Weight").innerHTML > 84){
+                        finalCaloriesBurnt = (finalCaloriesBurnt * 1.1);
+                        console.log(finalCaloriesBurnt);
+                    }
+                    else if(document.getElementById("Weight").innerHTML < 84){
+                        finalCaloriesBurnt = (finalCaloriesBurnt * 0.9);
+                        console.log(finalCaloriesBurnt);
+                    }
+                    else{
+                        finalCaloriesBurnt = (caloriesBurnt);
+                        console.log(finalCaloriesBurnt);
+                    }
+                    finalCaloriesBurnt = finalCaloriesBurnt.toFixed(2);
+                    console.log(finalCaloriesBurnt);
+                    document.getElementById("finalCaloriesBurnt").innerHTML = (finalCaloriesBurnt);
+
+                    var exercise = document.getElementsByName("Exercise")[0].value;
+                    var intensity = document.getElementsByName("Intensity")[0].value;
+
+                    var updateCaloriesForm = new FormData();
+                    updateCaloriesForm.append('exercise', exercise);
+                    updateCaloriesForm.append('intensity', intensity);
+                    updateCaloriesForm.append('calories', finalCaloriesBurnt);
+
+                    var url = "/userexercises/updatecalories/";
+
+                    fetch(url, {
+                        method: "POST",
+                        body: updateCaloriesForm,
+                    }).then(response => {
+                        return response.json();                 //return response to JSON
+                    }).then(response => {
+                        if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                            alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                        } else {
+                            alert("Calories successfully calculated");
+                        }
+                    });
                 }
             });
         }
+        function getUserInfo() {
+            console.log("Invoked getUserInfo()");
+
+            const url = "/userinformation/getUser/";	// API method on webserver will be in Weight class with @Path of list
+
+            fetch(url, {
+                method: "GET",
+            }).then(response => {
+                return response.json();                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    console.log(response.toString());
+                    fillUserForm(response);
+                }
+            });
+        }
+
+        function fillUserForm(data) {
+            console.log("invoked fillUserForm()");
+
+            document.getElementById("Height").innerHTML = data.Height;
+            document.getElementById("Weight").innerHTML = data.Weight;
+        }
+
+
     </script>
 
 </head>
-<body>
+<body onload="getUserInfo()">
+
+<div id="Height" style="display: none;"></div>
+<div id="Weight" style="display: none;"></div>
+
 <div class="header">
     <button class="NavButton" id="Home" onclick='goToHome();'>Home</button>
     <button class="NavButton" id="CaloriesSelected" onclick='goToCalories();'>Calorie Calculator</button>
@@ -91,12 +176,12 @@
     <h2 class="heading" style="font-size: 45px";> Input info here:</h2>
     <form id="calculatorForm">
         <p>Type of Exercise:</p>
-        <input type="radio" id="Treadmill (Runnning)" name="Exercise" value="Treadmill (Runnning)">
-        <label for="Treadmill (Runnning)">Treadmill (Running)</label><br>
-        <input type="radio" id="Swimming (Front Crawl)" name="Exercise" value="Swimming (Front Crawl)">
-        <label for="Swimming (Front Crawl)">Swimming (Front Crawl)</label><br>
-        <input type="radio" id="Swimming (Breaststroke)" name="Exercise" value="Swimming (Breaststroke)">
-        <label for="Swimming (Breaststroke)">Swimming (Breaststroke</label><br>
+        <input type="radio" id="Treadmill" name="Exercise" value="Treadmill">
+        <label for="Treadmill">Treadmill (Running)</label><br>
+        <input type="radio" id="Front Crawl" name="Exercise" value="Front Crawl">
+        <label for="Front Crawl">Swimming (Front Crawl)</label><br>
+        <input type="radio" id="Breaststroke" name="Exercise" value="Swimming (Breaststroke)">
+        <label for="Breaststroke">Swimming (Breaststroke)</label><br>
         <input type="radio" id="Cycling" name="Exercise" value="Cycling">
         <label for="Cycling">Cycling</label><br>
         <input type="radio" id="Football" name="Exercise" value="Football">
@@ -121,7 +206,9 @@
         <p> Enter time spent on exercise (minutes):</p>
         <input type="number"  id="time" name="time"><br>
     </form>
-    <button onclick="calculateCalories()">Calculate</button>
+    <button onclick="calculateCalories()" onclick="showCalories()">Calculate</button>
+    <h3>Calories Burnt:</h3>
+    <p id="finalCaloriesBurnt"></p>
 </div>
 </body>
 </html>
