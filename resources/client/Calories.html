@@ -64,68 +64,11 @@
                 } else {
                     console.log(response.CalsPerMin);
                     let calsPerMin = response.CalsPerMin;
-                    let time = document.getElementById("time").value;
-                    console.log(time);
-
-                    var caloriesBurnt = calsPerMin * time;
-                    console.log(caloriesBurnt);
-                    getUserInfo();
-                    console.log(document.getElementById("Height").innerHTML);
-                    console.log(document.getElementById("Weight").innerHTML);
-                    var finalCaloriesBurnt = 0;
-                    if (document.getElementById("Height").innerHTML > 170){
-                        finalCaloriesBurnt = (caloriesBurnt * 1.1);
-                        console.log(finalCaloriesBurnt);
-                    }
-                    else if(document.getElementById("Height").innerHTML < 170){
-                        finalCaloriesBurnt = (caloriesBurnt * 0.9);
-                        console.log(finalCaloriesBurnt);
-                    }
-                    else{
-                        finalCaloriesBurnt = (caloriesBurnt);
-                        console.log(finalCaloriesBurnt);
-                    }
-                    if (document.getElementById("Weight").innerHTML > 84){
-                        finalCaloriesBurnt = (finalCaloriesBurnt * 1.1);
-                        console.log(finalCaloriesBurnt);
-                    }
-                    else if(document.getElementById("Weight").innerHTML < 84){
-                        finalCaloriesBurnt = (finalCaloriesBurnt * 0.9);
-                        console.log(finalCaloriesBurnt);
-                    }
-                    else{
-                        finalCaloriesBurnt = (caloriesBurnt);
-                        console.log(finalCaloriesBurnt);
-                    }
-                    finalCaloriesBurnt = finalCaloriesBurnt.toFixed(2);
-                    console.log(finalCaloriesBurnt);
-                    document.getElementById("finalCaloriesBurnt").innerHTML = (finalCaloriesBurnt);
-
-                    var exercise = document.getElementsByName("Exercise")[0].value;
-                    var intensity = document.getElementsByName("Intensity")[0].value;
-
-                    var updateCaloriesForm = new FormData();
-                    updateCaloriesForm.append('exercise', exercise);
-                    updateCaloriesForm.append('intensity', intensity);
-                    updateCaloriesForm.append('calories', finalCaloriesBurnt);
-
-                    var url = "/userexercises/updatecalories/";
-
-                    fetch(url, {
-                        method: "POST",
-                        body: updateCaloriesForm,
-                    }).then(response => {
-                        return response.json();                 //return response to JSON
-                    }).then(response => {
-                        if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
-                            alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
-                        } else {
-                            alert("Calories successfully calculated");
-                        }
-                    });
+                    calculateFinalCalories(calsPerMin);
                 }
             });
         }
+
         function getUserInfo() {
             console.log("Invoked getUserInfo()");
 
@@ -152,7 +95,76 @@
             document.getElementById("Weight").innerHTML = data.Weight;
         }
 
+        function calculateFinalCalories(CalsPerMin){
+            let time = document.getElementById("time").value;
+            console.log(time);
 
+            var caloriesBurnt = CalsPerMin * time;
+            console.log(caloriesBurnt);
+            getUserInfo();
+            console.log(document.getElementById("Height").innerHTML);
+            console.log(document.getElementById("Weight").innerHTML);
+            var finalCaloriesBurnt = 0;
+            if (document.getElementById("Height").innerHTML > 170){
+                finalCaloriesBurnt = (caloriesBurnt * 1.1);
+                console.log(finalCaloriesBurnt);
+            }
+            else if(document.getElementById("Height").innerHTML < 170){
+                finalCaloriesBurnt = (caloriesBurnt * 0.9);
+                console.log(finalCaloriesBurnt);
+            }
+            else{
+                finalCaloriesBurnt = (caloriesBurnt);
+                console.log(finalCaloriesBurnt);
+            }
+            if (document.getElementById("Weight").innerHTML > 84){
+                finalCaloriesBurnt = (finalCaloriesBurnt * 1.1);
+                console.log(finalCaloriesBurnt);
+            }
+            else if(document.getElementById("Weight").innerHTML < 84){
+                finalCaloriesBurnt = (finalCaloriesBurnt * 0.9);
+                console.log(finalCaloriesBurnt);
+            }
+            else{
+                finalCaloriesBurnt = (caloriesBurnt);
+                console.log(finalCaloriesBurnt);
+            }
+            finalCaloriesBurnt = finalCaloriesBurnt.toFixed(2);
+            console.log(finalCaloriesBurnt);
+            turnDataToForm(finalCaloriesBurnt);
+        }
+
+        function turnDataToForm(FinalCaloriesBurnt){
+
+            document.getElementById("finalCaloriesBurnt").innerHTML = (FinalCaloriesBurnt);
+
+            const calories = FinalCaloriesBurnt;
+            const exercise = document.querySelector('input[name="Exercise"]:checked').value; //turns the radio inputs from the Calculator Form into JS values
+            const intensity = document.querySelector('input[name="Intensity"]:checked').value;
+            console.log(exercise);
+            console.log(intensity);
+
+            const formData = new FormData();                //turning data to a form so it can easily be inputted into API
+            formData.append('exercise', exercise);
+            formData.append('intensity', intensity);
+            formData.append('calories', calories);
+            console.log(formData);
+
+            var url = "/userexercises/updatecalories";
+
+            fetch(url, {
+                method: "POST",
+                body: formData,
+            }).then(response => {
+                return response.json();                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    alert("Calories successfully calculated");
+                }
+            });
+        }
     </script>
 
 </head>
