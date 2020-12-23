@@ -25,15 +25,14 @@ public class Exercises {
         System.out.println("Invoked Exercises.ExercisesList()");
         JSONArray response = new JSONArray();
         try {
-            PreparedStatement ps = Main.db.prepareStatement("SELECT ExerciseID, ExerciseName, LowIntensityPerMin, MedIntensityPerMin, HighIntensityPerMin FROM Exercises");
+            PreparedStatement ps = Main.db.prepareStatement("SELECT ExerciseName, LowIntensityPerMin, MedIntensityPerMin, HighIntensityPerMin FROM Exercises");
             ResultSet results = ps.executeQuery();
             while (results.next() == true) {
                 JSONObject row = new JSONObject();
-                row.put("ExerciseID", results.getInt(1));
-                row.put("ExercisesName", results.getString(2));
-                row.put("LowIntensityPerMin", results.getDouble(3));
-                row.put("MedIntensityPerMin", results.getDouble(4));
-                row.put("HighIntensityPerMin", results.getDouble(5));
+                row.put("ExercisesName", results.getString(1));
+                row.put("LowIntensityPerMin", results.getDouble(2));
+                row.put("MedIntensityPerMin", results.getDouble(3));
+                row.put("HighIntensityPerMin", results.getDouble(4));
                 response.add(row);
             }
             return response.toString();
