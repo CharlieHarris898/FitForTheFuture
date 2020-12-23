@@ -7,6 +7,7 @@ import org.json.simple.JSONObject;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Cookie;
+import javax.ws.rs.core.MediaType;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,6 +19,9 @@ import static server.Convertor.convertToJSONObject;
 
 
 @Path("calories/")
+@Consumes(MediaType.MULTIPART_FORM_DATA)
+@Produces(MediaType.APPLICATION_JSON)
+
 
 public class Calories{
 
@@ -50,7 +54,7 @@ public class Calories{
             }
 
             return "{\"CalsPerMin\":"  + calsPerMin + "}";
-            //return "{\"CalsPerMin\":\"55\"}";
+
 
         } catch (Exception exception) {
             System.out.println("Database error: " + exception.getMessage());

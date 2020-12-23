@@ -108,49 +108,50 @@
             if (document.getElementById("Height").innerHTML > 170){
                 finalCaloriesBurnt = (caloriesBurnt * 1.1);
                 console.log(finalCaloriesBurnt);
-            }
-            else if(document.getElementById("Height").innerHTML < 170){
+            } else if(document.getElementById("Height").innerHTML < 170){
                 finalCaloriesBurnt = (caloriesBurnt * 0.9);
                 console.log(finalCaloriesBurnt);
-            }
-            else{
+            } else{
                 finalCaloriesBurnt = (caloriesBurnt);
                 console.log(finalCaloriesBurnt);
             }
             if (document.getElementById("Weight").innerHTML > 84){
                 finalCaloriesBurnt = (finalCaloriesBurnt * 1.1);
                 console.log(finalCaloriesBurnt);
-            }
-            else if(document.getElementById("Weight").innerHTML < 84){
+            } else if(document.getElementById("Weight").innerHTML < 84){
                 finalCaloriesBurnt = (finalCaloriesBurnt * 0.9);
                 console.log(finalCaloriesBurnt);
-            }
-            else{
+            }  else{
                 finalCaloriesBurnt = (caloriesBurnt);
                 console.log(finalCaloriesBurnt);
             }
             finalCaloriesBurnt = finalCaloriesBurnt.toFixed(2);
-            console.log(finalCaloriesBurnt);
-            turnDataToForm(finalCaloriesBurnt);
+             document.getElementById("finalCaloriesBurnt").innerHTML = finalCaloriesBurnt;
+             addCalories(finalCaloriesBurnt);
         }
 
-        function turnDataToForm(FinalCaloriesBurnt){
+        //add record for this activity to database
+         function addCalories(finalCaloriesBurnt){
 
-            document.getElementById("finalCaloriesBurnt").innerHTML = (FinalCaloriesBurnt);
+            console.log("invoked addCalories()");
 
-            const calories = FinalCaloriesBurnt;
             const exercise = document.querySelector('input[name="Exercise"]:checked').value; //turns the radio inputs from the Calculator Form into JS values
             const intensity = document.querySelector('input[name="Intensity"]:checked').value;
+            const time = document.getElementById('time').value
+             const date = document.getElementById('date').value
             console.log(exercise);
+            console.log(time);
             console.log(intensity);
+            console.log(finalCaloriesBurnt);
 
             const formData = new FormData();                //turning data to a form so it can easily be inputted into API
             formData.append('exercise', exercise);
+            formData.append('time', time);
             formData.append('intensity', intensity);
-            formData.append('calories', calories);
-            console.log(formData);
+             formData.append('date', date);
+            formData.append('caloriesBurned', finalCaloriesBurnt);
 
-            var url = "/userexercises/updatecalories";
+            var url = "/userexercises/add";
 
             fetch(url, {
                 method: "POST",
@@ -161,7 +162,7 @@
                 if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
                     alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
                 } else {
-                    alert("Calories successfully calculated");
+                    alert("Exercise successfully calculated");
                 }
             });
         }
@@ -217,6 +218,10 @@
 
         <p> Enter time spent on exercise (minutes):</p>
         <input type="number"  id="time" name="time"><br>
+
+        <p> Enter date exercise completed:</p>
+        <input type="date"  id="date" name="date"><br>
+
     </form>
     <button onclick="calculateCalories()" onclick="showCalories()">Calculate</button>
     <h3>Calories Burnt:</h3>

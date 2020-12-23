@@ -7,6 +7,7 @@ import org.json.simple.JSONObject;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Cookie;
+import javax.ws.rs.core.MediaType;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,6 +18,9 @@ import static server.Convertor.convertToJSONObject;
 
 
 @Path("userinformation/")
+@Consumes(MediaType.MULTIPART_FORM_DATA)
+@Produces(MediaType.APPLICATION_JSON)
+
 public class UserInformation {
 
     @POST
@@ -52,19 +56,25 @@ public class UserInformation {
 
 
 
-    public static boolean validToken(String token) {		// this method MUST be called before any data is returned to the browser
-        // token is taken from the Cookie sent back automatically with every HTTP request
+    public static int validateToken(Cookie Token) {     //returns the userID that of the record with the cookie value
+
+        String uuid = Token.getValue();
+        System.out.println("Invoked User.validateToken(), Token value: " + uuid);
+
         try {
-            PreparedStatement ps = Main.db.prepareStatement("SELECT UserID FROM UserInformation WHERE Token = ?");
-            ps.setString(1, token);
-            ResultSet logoutResults = ps.executeQuery();
-            return logoutResults.next();   //logoutResults.next() will be true if there is a record in the ResultSet
-        } catch (Exception exception) {
-            System.out.println("Database error" + exception.getMessage());
-            return false;
+            PreparedStatement statement = Main.db.prepareStatement(
+                    "SELECT UserID FROM UserInformation WHERE Token = ?"
+            );
+            statement.setString(1, uuid);
+            ResultSet resultSet = statement.executeQuery();
+            System.out.println("UserID is " + resultSet.getInt("UserID"));
+            return resultSet.getInt("UserID");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return -1;  //rogue value indicating error
+
         }
     }
-
 
 
 
@@ -105,26 +115,6 @@ public class UserInformation {
     }
 
 
-
-    public static int validateToken(Cookie Token) {     //returns the userID that of the record with the cookie value
-
-        String uuid = Token.getValue();
-        System.out.println("Invoked User.validateToken(), Token value: " + uuid);
-
-        try {
-            PreparedStatement statement = Main.db.prepareStatement(
-                    "SELECT UserID FROM UserInformation WHERE Token = ?"
-            );
-            statement.setString(1, uuid);
-            ResultSet resultSet = statement.executeQuery();
-            System.out.println("UserID is " + resultSet.getInt("UserID"));
-            return resultSet.getInt("UserID");  //Retrieve by column name  (should really test we only get one result back!)
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return -1;  //rogue value indicating error
-
-        }
-    }
 
     @GET
     @Path("getUser")
