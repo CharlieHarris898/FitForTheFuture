@@ -263,3 +263,713 @@
 ::-webkit-scrollbar-thumb:hover {
     background: darkblue;
 }
+
+#Core1{
+    position: absolute;
+    left: 15%;
+    top: 40%;
+    display: none;
+}
+#Core2{
+    position: absolute;
+    right: 15%;
+    top: 40%;
+    display: none;
+}
+
+
+#Legs1{
+    position: absolute;
+    left: 15%;
+    top: 40%;
+    display: none;
+}
+#Legs2{
+    position: absolute;
+    right: 15%;
+    top: 40%;
+    display: none;
+}
+
+
+#Arms1{
+    position: absolute;
+    left: 15%;
+    top: 40%;
+    display: none;
+}
+#Arms2{
+    position: absolute;
+    right: 15%;
+    top: 40%;
+    display: none;
+}
+
+
+#Full1{
+    position: absolute;
+    left: 15%;
+    top: 40%;
+    display: none;
+}
+#Full2{
+    position: absolute;
+    right: 15%;
+    top: 40%;
+    display: none;
+}
+
+#CoreButton{
+    padding: 5px;
+    background: royalblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 15%;
+    height: 15%;
+    font-size: 30px;
+    border: 4px solid deepskyblue;
+    position: absolute;
+    top: 120px;
+    left: 50px;
+}
+#CoreButton:hover{background: lightblue; color: black}
+
+#LegsButton{
+    padding: 5px;
+    background: royalblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 15%;
+    height: 15%;
+    font-size: 30px;
+    border: 4px solid deepskyblue;
+    position: absolute;
+    top: 120px;
+    left: 500px;
+}
+#LegsButton:hover{background: lightblue; color: black}
+
+#ArmsButton{
+    padding: 5px;
+    background: royalblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 15%;
+    height: 15%;
+    font-size: 30px;
+    border: 4px solid deepskyblue;
+    position: absolute;
+    top: 120px;
+    right: 500px;
+}
+#ArmsButton:hover{background: lightblue; color: black}
+
+#FullButton{
+    padding: 5px;
+    background: royalblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 15%;
+    height: 15%;
+    font-size: 30px;
+    border: 4px solid deepskyblue;
+    position: absolute;
+    top: 120px;
+    right: 50px;
+}
+#FullButton:hover{background: lightblue; color: black}
+
+#Workout\ Paragraph{
+    position: absolute;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: block;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+
+#MainMeal1{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 250px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+#MainMeal2{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 450px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+#MainMeal3{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 650px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+
+#VeganMeal1{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 250px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+#VeganMeal2{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 450px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+#VeganMeal3{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 650px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+
+#Dessert1{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 250px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+#Dessert2{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 450px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+#Dessert3{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 650px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+
+#Snacks1{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 250px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+#Snacks2{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 450px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+#Snacks3{
+    position: absolute;
+    height: 30%;
+    width: 17.5%;
+    left: 50px;
+    top: 650px;
+    border: 3px solid #555;
+    border-radius: 12px;
+    display: none;
+}
+
+#MainButton{
+    padding: 5px;
+    background: royalblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 15%;
+    height: 15%;
+    font-size: 30px;
+    border: 4px solid deepskyblue;
+    position: absolute;
+    top: 120px;
+    left: 50px;
+}
+#MainButton:hover{background: lightblue; color: black}
+
+#VeganButton{
+    padding: 5px;
+    background: royalblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 15%;
+    height: 15%;
+    font-size: 30px;
+    border: 4px solid deepskyblue;
+    position: absolute;
+    top: 120px;
+    left: 500px;
+}
+#VeganButton:hover{background: lightblue; color: black}
+
+#DessertButton{
+    padding: 5px;
+    background: royalblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 15%;
+    height: 15%;
+    font-size: 30px;
+    border: 4px solid deepskyblue;
+    position: absolute;
+    top: 120px;
+    right: 500px;
+}
+#DessertButton:hover{background: lightblue; color: black}
+
+#SnackButton{
+    padding: 5px;
+    background: royalblue;
+    color: black;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 15%;
+    height: 15%;
+    font-size: 30px;
+    border: 4px solid deepskyblue;
+    position: absolute;
+    top: 120px;
+    right: 50px;
+}
+#SnackButton:hover{background: lightblue; color: black}
+
+#Recipe\ Paragraph{
+    position: absolute;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: block;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+
+#MainP1{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 250px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadMain1{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 300px;
+    display: none;
+}
+#DownloadMain1:hover{background: lightblue; color: black}
+
+#MainP2{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 450px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadMain2{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 500px;
+    display: none;
+}
+#DownloadMain2:hover{background: lightblue; color: black}
+
+#MainP3{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 650px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadMain3{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 700px;
+    display: none;
+}
+#DownloadMain3:hover{background: lightblue; color: black}
+
+#VeganP1{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 250px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadVegan1{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 300px;
+    display: none;
+}
+#DownloadVegan1:hover{background: lightblue; color: black}
+
+#VeganP2{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 450px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadVegan2{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 500px;
+    display: none;
+}
+#DownloadVegan2:hover{background: lightblue; color: black}
+
+#VeganP3{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 650px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadVegan3{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 700px;
+    display: none;
+}
+#DownloadVegan3:hover{background: lightblue; color: black}
+
+#DessertP1{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 250px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadDessert1{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 300px;
+    display: none;
+}
+#DownloadDessert1:hover{background: lightblue; color: black}
+
+#DessertP2{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 450px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadDessert2{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 500px;
+    display: none;
+}
+#DownloadDessert2:hover{background: lightblue; color: black}
+
+#DessertP3{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 650px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadDessert3{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 700px;
+    display: none;
+}
+#DownloadDessert3:hover{background: lightblue; color: black}
+
+#SnacksP1{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 250px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadSnacks1{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 300px;
+    display: none;
+}
+#DownloadSnacks1:hover{background: lightblue; color: black}
+
+#SnacksP2{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 450px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadSnacks2{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 500px;
+    display: none;
+}
+#DownloadSnacks2:hover{background: lightblue; color: black}
+
+#SnacksP3{
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 650px;
+    margin-left: 400px;
+    margin-right: 200px;
+    display: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+}
+#DownloadSnacks3{
+    padding: 5px;
+    background: royalblue;
+    color: white;
+    font-family: "Rockwell", serif;
+    border-radius: 12px;
+    width: 144px;
+    height: 60px;
+    font-size: 22px;
+    border: 2px solid deepskyblue;
+    position: absolute;
+    right: 15px;
+    top: 700px;
+    display: none;
+}
+#DownloadSnacks3:hover{background: lightblue; color: black}
+
+#Recipe\ Paragraph\ detailed{
+    position: absolute;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: "Rockwell", serif;
+    color:cornflowerblue;
+    top: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: block;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+    text-align: left;
+}

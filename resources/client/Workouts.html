@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workouts</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style src="https://code.jquery.com/jquery-3.3.1.js">
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+        function showCore(){
+            var Core1 = document.getElementById('Core1');
+            var Core2 = document.getElementById('Core2');
+            var Legs1 = document.getElementById('Legs1');
+            var Legs2 = document.getElementById('Legs2');
+            var Arms1 = document.getElementById('Arms1');
+            var Arms2 = document.getElementById('Arms2');
+            var Full1 = document.getElementById('Full1');
+            var Full2 = document.getElementById('Full2');
+
+            var CoreButton = document.getElementById('CoreButton');
+            var LegsButton = document.getElementById('LegsButton');
+            var ArmsButton = document.getElementById('ArmsButton');
+            var FullButton = document.getElementById('FullButton');
+
+            var paragraph = document.getElementById('Workout Paragraph');
+
+            Core1.style.display = 'block';
+            Core2.style.display = 'block';
+            Legs1.style.display = 'none';
+            Legs2.style.display = 'none';
+            Arms1.style.display = 'none';
+            Arms2.style.display = 'none';
+            Full1.style.display = 'none';
+            Full2.style.display = 'none';
+
+            CoreButton.style.background = '#6efdff';
+            CoreButton.style.border = '4px solid #57c8c9';
+            LegsButton.style.background = 'royalblue';
+            LegsButton.style.border = '4px solid deepskyblue';
+            ArmsButton.style.background = 'royalblue';
+            ArmsButton.style.border = '4px solid deepskyblue';
+            FullButton.style.background = 'royalblue';
+            FullButton.style.border = '4px solid deepskyblue';
+
+            paragraph.style.display = 'none';
+        }
+
+        function showLegs(){
+            var Core1 = document.getElementById('Core1');
+            var Core2 = document.getElementById('Core2');
+            var Legs1 = document.getElementById('Legs1');
+            var Legs2 = document.getElementById('Legs2');
+            var Arms1 = document.getElementById('Arms1');
+            var Arms2 = document.getElementById('Arms2');
+            var Full1 = document.getElementById('Full1');
+            var Full2 = document.getElementById('Full2');
+
+            var CoreButton = document.getElementById('CoreButton');
+            var LegsButton = document.getElementById('LegsButton');
+            var ArmsButton = document.getElementById('ArmsButton');
+            var FullButton = document.getElementById('FullButton');
+
+            var paragraph = document.getElementById('Workout Paragraph')
+
+            Core1.style.display = 'none';
+            Core2.style.display = 'none';
+            Legs1.style.display = 'block';
+            Legs2.style.display = 'block';
+            Arms1.style.display = 'none';
+            Arms2.style.display = 'none';
+            Full1.style.display = 'none';
+            Full2.style.display = 'none';
+
+            CoreButton.style.background = 'royalblue';
+            CoreButton.style.border = '4px solid deepskyblue';
+            LegsButton.style.background = '#6efdff';
+            LegsButton.style.border = '4px solid #57c8c9';
+            ArmsButton.style.background = 'royalblue';
+            ArmsButton.style.border = '4px solid deepskyblue';
+            FullButton.style.background = 'royalblue';
+            FullButton.style.border = '4px solid deepskyblue';
+
+            paragraph.style.display = 'none';
+        }
+        function showArms(){
+            var Core1 = document.getElementById('Core1');
+            var Core2 = document.getElementById('Core2');
+            var Legs1 = document.getElementById('Legs1');
+            var Legs2 = document.getElementById('Legs2');
+            var Arms1 = document.getElementById('Arms1');
+            var Arms2 = document.getElementById('Arms2');
+            var Full1 = document.getElementById('Full1');
+            var Full2 = document.getElementById('Full2');
+
+            var CoreButton = document.getElementById('CoreButton');
+            var LegsButton = document.getElementById('LegsButton');
+            var ArmsButton = document.getElementById('ArmsButton');
+            var FullButton = document.getElementById('FullButton');
+
+            var paragraph = document.getElementById('Workout Paragraph')
+
+            Core1.style.display = 'none';
+            Core2.style.display = 'none';
+            Legs1.style.display = 'none';
+            Legs2.style.display = 'none';
+            Arms1.style.display = 'block';
+            Arms2.style.display = 'block';
+            Full1.style.display = 'none';
+            Full2.style.display = 'none';
+
+            CoreButton.style.background = 'royalblue';
+            CoreButton.style.border = '4px solid deepskyblue';
+            LegsButton.style.background = 'royalblue';
+            LegsButton.style.border = '4px solid deepskyblue';
+            ArmsButton.style.background = '#6efdff';
+            ArmsButton.style.border = '4px solid #57c8c9';
+            FullButton.style.background = 'royalblue';
+            FullButton.style.border = '4px solid deepskyblue';
+
+            paragraph.style.display = 'none';
+        }
+        function showFull(){
+            var Core1 = document.getElementById('Core1');
+            var Core2 = document.getElementById('Core2');
+            var Legs1 = document.getElementById('Legs1');
+            var Legs2 = document.getElementById('Legs2');
+            var Arms1 = document.getElementById('Arms1');
+            var Arms2 = document.getElementById('Arms2');
+            var Full1 = document.getElementById('Full1');
+            var Full2 = document.getElementById('Full2');
+
+            var CoreButton = document.getElementById('CoreButton');
+            var LegsButton = document.getElementById('LegsButton');
+            var ArmsButton = document.getElementById('ArmsButton');
+            var FullButton = document.getElementById('FullButton');
+
+            var paragraph = document.getElementById('Workout Paragraph')
+
+            Core1.style.display = 'none';
+            Core2.style.display = 'none';
+            Legs1.style.display = 'none';
+            Legs2.style.display = 'none';
+            Arms1.style.display = 'none';
+            Arms2.style.display = 'none';
+            Full1.style.display = 'block';
+            Full2.style.display = 'block';
+
+            CoreButton.style.background = 'royalblue';
+            CoreButton.style.border = '4px solid deepskyblue';
+            LegsButton.style.background = 'royalblue';
+            LegsButton.style.border = '4px solid deepskyblue';
+            ArmsButton.style.background = 'royalblue';
+            ArmsButton.style.border = '4px solid deepskyblue';
+            FullButton.style.background = '#6efdff';
+            FullButton.style.border = '4px solid #57c8c9';
+
+            paragraph.style.display = 'none';
+        }
+
+
+    </script>
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="Home" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="ExercisesSelected" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div class="mainSection" id="scroll">
+    <h1 class="heading" style="font-size: 60px";>Workouts</h1>
+    <button id="CoreButton" onclick='showCore();'>Core Exercises</button>
+    <button id="LegsButton" onclick='showLegs();'>Leg Exercises</button>
+    <button id="ArmsButton" onclick='showArms();'>Arm Exercises</button>
+    <button id="FullButton" onclick='showFull();'>Full Body Exercises</button>
+    <p id="Workout Paragraph">
+        Here you can find videos found on the internet detailing workouts for the four main parts of your body.
+        Click one of the buttons to choose to see some of the workout videos relating to that region of the body!
+    </p>
+    <!--    Core Workouts-->
+    <iframe width="560" height="315" id="Core1"
+            src="https://www.youtube.com/embed/l7aE05MS158" frameborder="0" allow="accelerometer; autoplay;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <iframe width="560" height="315" id="Core2"
+            src="https://www.youtube.com/embed/dJlFmxiL11s" frameborder="0" allow="accelerometer; autoplay;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <!--    Leg Workouts-->
+    <iframe width="560" height="315" id="Legs1"
+            src="https://www.youtube.com/embed/Jbvb_MMGc8s" frameborder="0" allow="accelerometer; autoplay;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <iframe width="560" height="315" id="Legs2"
+            src="https://www.youtube.com/embed/Xg9B6pqHUQE" frameborder="0" allow="accelerometer; autoplay;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <!--    Arm Workouts-->
+    <iframe width="560" height="315" id="Arms1"
+            src="https://www.youtube.com/embed/-d-fF1Nx2bQ" frameborder="0" allow="accelerometer; autoplay;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <iframe width="560" height="315" id="Arms2"
+            src="https://www.youtube.com/embed/m3Nsjdx-UY0" frameborder="0" allow="accelerometer; autoplay;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <!--    Full Body Workouts-->
+    <iframe width="560" height="315" id="Full1"
+            src="https://www.youtube.com/embed/R6gZoAzAhCg" frameborder="0" allow="accelerometer; autoplay;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <iframe width="560" height="315" id="Full2"
+            src="https://www.youtube.com/embed/95846CBGU0M" frameborder="0" allow="accelerometer; autoplay;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+</div>
+
+</body>
+</html>

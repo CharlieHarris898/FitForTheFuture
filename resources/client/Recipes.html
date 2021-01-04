@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style src="https://code.jquery.com/jquery-3.3.1.js">
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+        function showMain(){
+            var Main1 = document.getElementById('MainMeal1');
+            var Main2 = document.getElementById('MainMeal2');
+            var Main3 = document.getElementById('MainMeal3');
+            var Vegan1 = document.getElementById('VeganMeal1');
+            var Vegan2 = document.getElementById('VeganMeal2');
+            var Vegan3 = document.getElementById('VeganMeal3');
+            var Dessert1 = document.getElementById('Dessert1');
+            var Dessert2 = document.getElementById('Dessert2');
+            var Dessert3 = document.getElementById('Dessert3');
+            var Snacks1 = document.getElementById('Snacks1');
+            var Snacks2 = document.getElementById('Snacks2');
+            var Snacks3 = document.getElementById('Snacks3');
+
+            var MainP1 = document.getElementById('MainP1');
+            var MainP2 = document.getElementById('MainP2');
+            var MainP3 = document.getElementById('MainP3');
+            var VeganP1 = document.getElementById('VeganP1');
+            var VeganP2 = document.getElementById('VeganP2');
+            var VeganP3 = document.getElementById('VeganP3');
+            var DessertP1 = document.getElementById('DessertP1');
+            var DessertP2 = document.getElementById('DessertP2');
+            var DessertP3 = document.getElementById('DessertP3');
+            var SnacksP1 = document.getElementById('SnacksP1');
+            var SnacksP2 = document.getElementById('SnacksP2');
+            var SnacksP3 = document.getElementById('SnacksP3');
+
+            var DownloadMain1 = document.getElementById('DownloadMain1');
+            var DownloadMain2 = document.getElementById('DownloadMain2');
+            var DownloadMain3 = document.getElementById('DownloadMain3');
+            var DownloadVegan1 = document.getElementById('DownloadVegan1');
+            var DownloadVegan2 = document.getElementById('DownloadVegan2');
+            var DownloadVegan3 = document.getElementById('DownloadVegan3');
+            var DownloadDessert1 = document.getElementById('DownloadDessert1');
+            var DownloadDessert2 = document.getElementById('DownloadDessert2');
+            var DownloadDessert3 = document.getElementById('DownloadDessert3');
+            var DownloadSnacks1 = document.getElementById('DownloadSnacks1');
+            var DownloadSnacks2 = document.getElementById('DownloadSnacks2');
+            var DownloadSnacks3 = document.getElementById('DownloadSnacks3');
+
+            var MainButton = document.getElementById('MainButton');
+            var VeganButton = document.getElementById('VeganButton');
+            var DessertButton = document.getElementById('DessertButton');
+            var SnackButton = document.getElementById('SnackButton');
+
+            var paragraph = document.getElementById('Recipe Paragraph');
+
+            Main1.style.display = 'block';
+            Main2.style.display = 'block';
+            Main3.style.display = 'block';
+            Vegan1.style.display = 'none';
+            Vegan2.style.display = 'none';
+            Vegan3.style.display = 'none';
+            Dessert1.style.display = 'none';
+            Dessert2.style.display = 'none';
+            Dessert3.style.display = 'none';
+            Snacks1.style.display = 'none';
+            Snacks2.style.display = 'none';
+            Snacks3.style.display = 'none';
+
+            MainP1.style.display = 'block';
+            MainP2.style.display = 'block';
+            MainP3.style.display = 'block';
+            VeganP1.style.display = 'none';
+            VeganP2.style.display = 'none';
+            VeganP3.style.display = 'none';
+            DessertP1.style.display = 'none';
+            DessertP2.style.display = 'none';
+            DessertP3.style.display = 'none';
+            SnacksP1.style.display = 'none';
+            SnacksP2.style.display = 'none';
+            SnacksP3.style.display = 'none';
+
+            DownloadMain1.style.display = 'block';
+            DownloadMain2.style.display = 'block';
+            DownloadMain3.style.display = 'block';
+            DownloadVegan1.style.display = 'none';
+            DownloadVegan2.style.display = 'none';
+            DownloadVegan3.style.display = 'none';
+            DownloadDessert1.style.display = 'none';
+            DownloadDessert2.style.display = 'none';
+            DownloadDessert3.style.display = 'none';
+            DownloadSnacks1.style.display = 'none';
+            DownloadSnacks2.style.display = 'none';
+            DownloadSnacks3.style.display = 'none';
+
+            MainButton.style.background = '#6efdff';
+            MainButton.style.border = '4px solid #57c8c9';
+            VeganButton.style.background = 'royalblue';
+            VeganButton.style.border = '4px solid deepskyblue';
+            DessertButton.style.background = 'royalblue';
+            DessertButton.style.border = '4px solid deepskyblue';
+            SnackButton.style.background = 'royalblue';
+            SnackButton.style.border = '4px solid deepskyblue';
+
+            paragraph.style.display = 'none';
+        }
+
+        function showVegan(){
+            var Main1 = document.getElementById('MainMeal1');
+            var Main2 = document.getElementById('MainMeal2');
+            var Main3 = document.getElementById('MainMeal3');
+            var Vegan1 = document.getElementById('VeganMeal1');
+            var Vegan2 = document.getElementById('VeganMeal2');
+            var Vegan3 = document.getElementById('VeganMeal3');
+            var Dessert1 = document.getElementById('Dessert1');
+            var Dessert2 = document.getElementById('Dessert2');
+            var Dessert3 = document.getElementById('Dessert3');
+            var Snacks1 = document.getElementById('Snacks1');
+            var Snacks2 = document.getElementById('Snacks2');
+            var Snacks3 = document.getElementById('Snacks3');
+
+            var MainP1 = document.getElementById('MainP1');
+            var MainP2 = document.getElementById('MainP2');
+            var MainP3 = document.getElementById('MainP3');
+            var VeganP1 = document.getElementById('VeganP1');
+            var VeganP2 = document.getElementById('VeganP2');
+            var VeganP3 = document.getElementById('VeganP3');
+            var DessertP1 = document.getElementById('DessertP1');
+            var DessertP2 = document.getElementById('DessertP2');
+            var DessertP3 = document.getElementById('DessertP3');
+            var SnacksP1 = document.getElementById('SnacksP1');
+            var SnacksP2 = document.getElementById('SnacksP2');
+            var SnacksP3 = document.getElementById('SnacksP3');
+
+            var DownloadMain1 = document.getElementById('DownloadMain1');
+            var DownloadMain2 = document.getElementById('DownloadMain2');
+            var DownloadMain3 = document.getElementById('DownloadMain3');
+            var DownloadVegan1 = document.getElementById('DownloadVegan1');
+            var DownloadVegan2 = document.getElementById('DownloadVegan2');
+            var DownloadVegan3 = document.getElementById('DownloadVegan3');
+            var DownloadDessert1 = document.getElementById('DownloadDessert1');
+            var DownloadDessert2 = document.getElementById('DownloadDessert2');
+            var DownloadDessert3 = document.getElementById('DownloadDessert3');
+            var DownloadSnacks1 = document.getElementById('DownloadSnacks1');
+            var DownloadSnacks2 = document.getElementById('DownloadSnacks2');
+            var DownloadSnacks3 = document.getElementById('DownloadSnacks3');
+
+            var MainButton = document.getElementById('MainButton');
+            var VeganButton = document.getElementById('VeganButton');
+            var DessertButton = document.getElementById('DessertButton');
+            var SnackButton = document.getElementById('SnackButton');
+
+            var paragraph = document.getElementById('Recipe Paragraph');
+
+            Main1.style.display = 'none';
+            Main2.style.display = 'none';
+            Main3.style.display = 'none';
+            Vegan1.style.display = 'block';
+            Vegan2.style.display = 'block';
+            Vegan3.style.display = 'block';
+            Dessert1.style.display = 'none';
+            Dessert2.style.display = 'none';
+            Dessert3.style.display = 'none';
+            Snacks1.style.display = 'none';
+            Snacks2.style.display = 'none';
+            Snacks3.style.display = 'none';
+
+            MainP1.style.display = 'none';
+            MainP2.style.display = 'none';
+            MainP3.style.display = 'none';
+            VeganP1.style.display = 'block';
+            VeganP2.style.display = 'block';
+            VeganP3.style.display = 'block';
+            DessertP1.style.display = 'none';
+            DessertP2.style.display = 'none';
+            DessertP3.style.display = 'none';
+            SnacksP1.style.display = 'none';
+            SnacksP2.style.display = 'none';
+            SnacksP3.style.display = 'none';
+
+            DownloadMain1.style.display = 'none';
+            DownloadMain2.style.display = 'none';
+            DownloadMain3.style.display = 'none';
+            DownloadVegan1.style.display = 'block';
+            DownloadVegan2.style.display = 'block';
+            DownloadVegan3.style.display = 'block';
+            DownloadDessert1.style.display = 'none';
+            DownloadDessert2.style.display = 'none';
+            DownloadDessert3.style.display = 'none';
+            DownloadSnacks1.style.display = 'none';
+            DownloadSnacks2.style.display = 'none';
+            DownloadSnacks3.style.display = 'none';
+
+            MainButton.style.background = 'royalblue';
+            MainButton.style.border = '4px solid deepskyblue';
+            VeganButton.style.background = '#6efdff';
+            VeganButton.style.border = '4px solid #57c8c9';
+            DessertButton.style.background = 'royalblue';
+            DessertButton.style.border = '4px solid deepskyblue';
+            SnackButton.style.background = 'royalblue';
+            SnackButton.style.border = '4px solid deepskyblue';
+
+            paragraph.style.display = 'none';
+        }
+
+        function showDessert(){
+            var Main1 = document.getElementById('MainMeal1');
+            var Main2 = document.getElementById('MainMeal2');
+            var Main3 = document.getElementById('MainMeal3');
+            var Vegan1 = document.getElementById('VeganMeal1');
+            var Vegan2 = document.getElementById('VeganMeal2');
+            var Vegan3 = document.getElementById('VeganMeal3');
+            var Dessert1 = document.getElementById('Dessert1');
+            var Dessert2 = document.getElementById('Dessert2');
+            var Dessert3 = document.getElementById('Dessert3');
+            var Snacks1 = document.getElementById('Snacks1');
+            var Snacks2 = document.getElementById('Snacks2');
+            var Snacks3 = document.getElementById('Snacks3');
+
+            var MainP1 = document.getElementById('MainP1');
+            var MainP2 = document.getElementById('MainP2');
+            var MainP3 = document.getElementById('MainP3');
+            var VeganP1 = document.getElementById('VeganP1');
+            var VeganP2 = document.getElementById('VeganP2');
+            var VeganP3 = document.getElementById('VeganP3');
+            var DessertP1 = document.getElementById('DessertP1');
+            var DessertP2 = document.getElementById('DessertP2');
+            var DessertP3 = document.getElementById('DessertP3');
+            var SnacksP1 = document.getElementById('SnacksP1');
+            var SnacksP2 = document.getElementById('SnacksP2');
+            var SnacksP3 = document.getElementById('SnacksP3');
+
+            var DownloadMain1 = document.getElementById('DownloadMain1');
+            var DownloadMain2 = document.getElementById('DownloadMain2');
+            var DownloadMain3 = document.getElementById('DownloadMain3');
+            var DownloadVegan1 = document.getElementById('DownloadVegan1');
+            var DownloadVegan2 = document.getElementById('DownloadVegan2');
+            var DownloadVegan3 = document.getElementById('DownloadVegan3');
+            var DownloadDessert1 = document.getElementById('DownloadDessert1');
+            var DownloadDessert2 = document.getElementById('DownloadDessert2');
+            var DownloadDessert3 = document.getElementById('DownloadDessert3');
+            var DownloadSnacks1 = document.getElementById('DownloadSnacks1');
+            var DownloadSnacks2 = document.getElementById('DownloadSnacks2');
+            var DownloadSnacks3 = document.getElementById('DownloadSnacks3');
+
+            var MainButton = document.getElementById('MainButton');
+            var VeganButton = document.getElementById('VeganButton');
+            var DessertButton = document.getElementById('DessertButton');
+            var SnackButton = document.getElementById('SnackButton');
+
+            var paragraph = document.getElementById('Recipe Paragraph');
+
+            Main1.style.display = 'none';
+            Main2.style.display = 'none';
+            Main3.style.display = 'none';
+            Vegan1.style.display = 'none';
+            Vegan2.style.display = 'none';
+            Vegan3.style.display = 'none';
+            Dessert1.style.display = 'block';
+            Dessert2.style.display = 'block';
+            Dessert3.style.display = 'block';
+            Snacks1.style.display = 'none';
+            Snacks2.style.display = 'none';
+            Snacks3.style.display = 'none';
+
+            MainP1.style.display = 'none';
+            MainP2.style.display = 'none';
+            MainP3.style.display = 'none';
+            VeganP1.style.display = 'none';
+            VeganP2.style.display = 'none';
+            VeganP3.style.display = 'none';
+            DessertP1.style.display = 'block';
+            DessertP2.style.display = 'block';
+            DessertP3.style.display = 'block';
+            SnacksP1.style.display = 'none';
+            SnacksP2.style.display = 'none';
+            SnacksP3.style.display = 'none';
+
+            DownloadMain1.style.display = 'none';
+            DownloadMain2.style.display = 'none';
+            DownloadMain3.style.display = 'none';
+            DownloadVegan1.style.display = 'none';
+            DownloadVegan2.style.display = 'none';
+            DownloadVegan3.style.display = 'none';
+            DownloadDessert1.style.display = 'block';
+            DownloadDessert2.style.display = 'block';
+            DownloadDessert3.style.display = 'block';
+            DownloadSnacks1.style.display = 'none';
+            DownloadSnacks2.style.display = 'none';
+            DownloadSnacks3.style.display = 'none';
+
+            MainButton.style.background = 'royalblue';
+            MainButton.style.border = '4px solid deepskyblue';
+            VeganButton.style.background = 'royalblue';
+            VeganButton.style.border = '4px solid deepskyblue';
+            DessertButton.style.background = '#6efdff';
+            DessertButton.style.border = 'px solid #57c8c9';
+            SnackButton.style.background = 'royalblue';
+            SnackButton.style.border = '4px solid deepskyblue';
+
+            paragraph.style.display = 'none';
+        }
+
+        function showSnack(){
+            var Main1 = document.getElementById('MainMeal1');
+            var Main2 = document.getElementById('MainMeal2');
+            var Main3 = document.getElementById('MainMeal3');
+            var Vegan1 = document.getElementById('VeganMeal1');
+            var Vegan2 = document.getElementById('VeganMeal2');
+            var Vegan3 = document.getElementById('VeganMeal3');
+            var Dessert1 = document.getElementById('Dessert1');
+            var Dessert2 = document.getElementById('Dessert2');
+            var Dessert3 = document.getElementById('Dessert3');
+            var Snacks1 = document.getElementById('Snacks1');
+            var Snacks2 = document.getElementById('Snacks2');
+            var Snacks3 = document.getElementById('Snacks3');
+
+            var MainP1 = document.getElementById('MainP1');
+            var MainP2 = document.getElementById('MainP2');
+            var MainP3 = document.getElementById('MainP3');
+            var VeganP1 = document.getElementById('VeganP1');
+            var VeganP2 = document.getElementById('VeganP2');
+            var VeganP3 = document.getElementById('VeganP3');
+            var DessertP1 = document.getElementById('DessertP1');
+            var DessertP2 = document.getElementById('DessertP2');
+            var DessertP3 = document.getElementById('DessertP3');
+            var SnacksP1 = document.getElementById('SnacksP1');
+            var SnacksP2 = document.getElementById('SnacksP2');
+            var SnacksP3 = document.getElementById('SnacksP3');
+
+            var DownloadMain1 = document.getElementById('DownloadMain1');
+            var DownloadMain2 = document.getElementById('DownloadMain2');
+            var DownloadMain3 = document.getElementById('DownloadMain3');
+            var DownloadVegan1 = document.getElementById('DownloadVegan1');
+            var DownloadVegan2 = document.getElementById('DownloadVegan2');
+            var DownloadVegan3 = document.getElementById('DownloadVegan3');
+            var DownloadDessert1 = document.getElementById('DownloadDessert1');
+            var DownloadDessert2 = document.getElementById('DownloadDessert2');
+            var DownloadDessert3 = document.getElementById('DownloadDessert3');
+            var DownloadSnacks1 = document.getElementById('DownloadSnacks1');
+            var DownloadSnacks2 = document.getElementById('DownloadSnacks2');
+            var DownloadSnacks3 = document.getElementById('DownloadSnacks3');
+
+            var MainButton = document.getElementById('MainButton');
+            var VeganButton = document.getElementById('VeganButton');
+            var DessertButton = document.getElementById('DessertButton');
+            var SnackButton = document.getElementById('SnackButton');
+
+            var paragraph = document.getElementById('Recipe Paragraph');
+
+            Main1.style.display = 'none';
+            Main2.style.display = 'none';
+            Main3.style.display = 'none';
+            Vegan1.style.display = 'none';
+            Vegan2.style.display = 'none';
+            Vegan3.style.display = 'none';
+            Dessert1.style.display = 'none';
+            Dessert2.style.display = 'none';
+            Dessert3.style.display = 'none';
+            Snacks1.style.display = 'block';
+            Snacks2.style.display = 'block';
+            Snacks3.style.display = 'block';
+
+            MainP1.style.display = 'none';
+            MainP2.style.display = 'none';
+            MainP3.style.display = 'none';
+            VeganP1.style.display = 'none';
+            VeganP2.style.display = 'none';
+            VeganP3.style.display = 'none';
+            DessertP1.style.display = 'none';
+            DessertP2.style.display = 'none';
+            DessertP3.style.display = 'none';
+            SnacksP1.style.display = 'block';
+            SnacksP2.style.display = 'block';
+            SnacksP3.style.display = 'block';
+
+            DownloadMain1.style.display = 'none';
+            DownloadMain2.style.display = 'none';
+            DownloadMain3.style.display = 'none';
+            DownloadVegan1.style.display = 'none';
+            DownloadVegan2.style.display = 'none';
+            DownloadVegan3.style.display = 'none';
+            DownloadDessert1.style.display = 'none';
+            DownloadDessert2.style.display = 'none';
+            DownloadDessert3.style.display = 'none';
+            DownloadSnacks1.style.display = 'block';
+            DownloadSnacks2.style.display = 'block';
+            DownloadSnacks3.style.display = 'block';
+
+            MainButton.style.background = 'royalblue';
+            MainButton.style.border = '4px solid deepskyblue';
+            VeganButton.style.background = 'royalblue';
+            VeganButton.style.border = '4px solid deepskyblue';
+            DessertButton.style.background = 'royalblue';
+            DessertButton.style.border = '4px solid deepskyblue';
+            SnackButton.style.background = '#6efdff';
+            SnackButton.style.border = '4px solid #57c8c9';
+
+            paragraph.style.display = 'none';
+        }
+
+        function goToMain1(){
+            window.open("Main1.html", "_self");
+        }
+        function goToMain2(){
+            window.open("Main2.html", "_self");
+        }
+        function goToMain3(){
+            window.open("Main3.html", "_self");
+        }
+
+        function goToVegan1(){
+            window.open("Vegan1.html", "_self");
+        }
+        function goToVegan2(){
+            window.open("Vegan2.html", "_self");
+        }
+        function goToVegan3(){
+            window.open("Vegan3.html", "_self");
+        }
+
+        function goToDessert1(){
+            window.open("Dessert1.html", "_self");
+        }
+        function goToDessert2(){
+            window.open("Dessert2.html", "_self");
+        }
+        function goToDessert3(){
+            window.open("Dessert3.html", "_self");
+        }
+
+        function goToSnacks1(){
+            window.open("Snacks1.html", "_self");
+        }
+        function goToSnacks2(){
+            window.open("Snacks2.html", "_self");
+        }
+        function goToSnacks3(){
+            window.open("Snacks3.html", "_self");
+        }
+    </script>
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="Home" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="RecipesSelected" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div class="mainSection" id="scroll">
+    <h1 class="heading" style="font-size: 60px";>Recipes</h1>
+    <button id="MainButton" onclick='showMain();'>Main Meals</button>
+    <button id="VeganButton" onclick='showVegan();'>Vegan Meals</button>
+    <button id="DessertButton" onclick='showDessert();'>Light Desserts</button>
+    <button id="SnackButton" onclick='showSnack();'>Light Snacks</button>
+    <p id="Recipe Paragraph">
+        Here you can find some delicious recipes based around 4 main themes: Main meals, Vegan Meals,
+        Desserts, and Snacks. All of these being as healthy as possible! Choose the category you'd like to
+        look into and find a recipe you like. Press the 'Recipe' button to view the recipe and cook
+        to your hearts content!
+    </p>
+    <!-- Main Meals -->
+    <img src="img/Basil chicken with vermicelli.jpg" id="MainMeal1"/>
+    <p id="MainP1">Basil Chicken with Vermicelli: This is the ultimate comfort food on a rainy night - and quick to prepare. Add the crushed chillies if you want a bit of spice.</p>
+    <button id="DownloadMain1" onclick="goToMain1();">RECIPE</button>
+
+    <img src="img/Cashew nut roast.jpg" id="MainMeal2"/>
+    <p id="MainP2">Cashew Nut Roast: This cashew nut roast is an easy and really delicious vegetarian main course that serves four generously.</p>
+    <button id="DownloadMain2" onclick="goToMain2();">RECIPE</button>
+
+    <img src="img/Shepard's pie.jpg" id="MainMeal3"/>
+    <p id="MainP3">Shepard's Pie: Minced lamb and vegetables, topped with a layer of cheese and onion mash. A true family favourite in all homes!</p>
+    <button id="DownloadMain3" onclick="goToMain3();">RECIPE</button>
+
+    <!-- Vegan Meals -->
+    <img src="img/Briam.jpg" id="VeganMeal1"/>
+    <p id="VeganP1">Briam (Greek potato and courgette bake): This is a traditional dish served as a main course, and with olive oil as the only source of fat it is a quintessential example of the 'Mediterranean diet'. If preferred, serve with a hearty chunk of feta on the side.</p>
+    <button id="DownloadVegan1" onclick="goToVegan1();">RECIPE</button>
+
+    <img src="img/Madras potato curry.jpg" id="VeganMeal2"/>
+    <p id="VeganP2">Madras Potato Curry: This dish makes a colourful main for a dinner party. Potatoes, cauliflower florets and red lentils combine with onions, garlic, curry powder, ginger, tomatoes, malt vinegar and chutney.</p>
+    <button id="DownloadVegan2" onclick="goToVegan2();">RECIPE</button>
+
+    <img src="img/Mushroom couscous risotto.jpg" id="VeganMeal3"/>
+    <p id="VeganP3">Mushroom Couscous Risotto: Budget friendly and healthy, great mid-week meal. Also great for students.</p>
+    <button id="DownloadVegan3" onclick="goToVegan3();">RECIPE</button>
+
+    <!-- Desserts -->
+    <img src="img/Date pecan squares.jpg" id="Dessert1"/>
+    <p id="DessertP1">Date Pecan Squares: Quick and easy traybake, chock-a-block with fruity dates and nutty pecans and sweetly healthy, using brown sugar and a touch of vanilla. A very nutritious, delicious low fat treat..</p>
+    <button id="DownloadDessert1" onclick="goToDessert1();">RECIPE</button>
+
+    <img src="img/Low sugar strawberry rhubarb crumble.jpg" id="Dessert2"/>
+    <p id="DessertP2">Strawberry Rhubarb Crumble: A lot of rhubarb recipes add a large amount of sugar. This keeps the sweetener to a minimum so you can enjoy the tang of the rhubarb! Delicious - enjoy! Use sugar in place of honey if you like.</p>
+    <button id="DownloadDessert2" onclick="goToDessert2();">RECIPE</button>
+
+    <img src="img/Roasted banana frozen yoghurt.jpg" id="Dessert3"/>
+    <p id="DessertP3">Roasted Banana Frozen Yoghurt: This frozen yoghurt will turn out very nice, with a lovely tangy flavour from the yoghurt with the sweetness of the roasted bananas. The bananas need to be very ripe for this recipe. </p>
+    <button id="DownloadDessert3" onclick="goToDessert3();">RECIPE</button>
+
+    <!-- Snacks -->
+    <img src="img/Roasted pumpkin seeds.jpg" id="Snacks1"/>
+    <p id="SnacksP1">Roasted Pumpkin Seeds: Make this snack by roasting fresh pumpkin seeds in olive oil or butter. Worcestershire sauce adds a distinctive flavour.</p>
+    <button id="DownloadSnacks1" onclick="goToSnacks1();">RECIPE</button>
+
+    <img src="img/Cucumber sunomo.jpg" id="Snacks2"/>
+    <p id="SnacksP2">Cucumber Sunomo: A Japanese recipe for cucumbers marinated in vinegar, sugar, salt and ginger. So simple but so delicious!</p>
+    <button id="DownloadSnacks2" onclick="goToSnacks2();">RECIPE</button>
+
+    <img src="img/Baked tortilla chips.jpg" id="Snacks3"/>
+    <p id="SnacksP3">Baked Torilla Chips: Tasty baked tortilla crisps you make at home. Serve with your choice of dips and salsas.</p>
+    <button id="DownloadSnacks3" onclick="goToSnacks3();">RECIPE</button>
+</div>
+</body>
+</html>

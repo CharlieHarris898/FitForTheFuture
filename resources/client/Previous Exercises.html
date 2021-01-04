@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Previous Exercises</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style src="https://code.jquery.com/jquery-3.3.1.js">
+        th, td, p, input, h3 {
+            font:30px 'Rockwell';
+            color:navy;
+        }
+        table, th, td {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            border: solid 5px darkslateblue;
+        }
+        table {
+            border-radius: 12px;
+        }
+        th {
+            font-weight:bold;
+            color:black;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+        function getUserExercises() {
+            console.log("Invoked getUserExercises()");
+
+            const url = "/userexercises/getInfo/";
+
+            fetch(url, {
+                method: "GET",
+            }).then(response => {
+                return response.json();                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    console.log(response.toString());
+                    var exercisesList = response;
+                    console.log("invoked fillTable()");
+                    fillTable(exercisesList);
+                }
+            });
+        }
+
+        function fillTable(tableData) {
+            console.log("invoked fillTable()");
+            console.log(tableData);
+            for (var i in tableData){
+                var row = `<tr>
+  							<td>${tableData[i].Exercise}</td>
+  							<td>${tableData[i].Intensity}</td>
+                            <td>${tableData[i].Duration}</td>
+                            <td>${tableData[i].CaloriesBurned}</td>
+                            <td>${tableData[i].Date}</td>
+                            `
+                var table = $('#table-body');
+                table.append(row);
+            }
+        }
+
+
+    </script>
+</head>
+<body onload="getUserExercises()">
+<div class="header">
+    <button class="NavButton" id="Home" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="ExercisesSelected" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div class="mainSection" id="scroll">
+    <h1 class="heading" style="font-size: 60px";>Your Previous Exercises</h1>
+    <table id="our-table">
+        <thead>
+        <tr>
+            <th>Exercise</th>
+            <th>Intensity</th>
+            <th>Duration</th>
+            <th>Calories Burned</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
