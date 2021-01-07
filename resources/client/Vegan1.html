@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vegan1</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Briam (Greek potato and courgette bake):</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 4<br>
+        - 1kg potatoes, peeled and sliced into 3mm rounds<br>
+        - 4 large courgettes, sliced into 3mm rounds<br>
+        - 4 small red onions, sliced into 3mm rounds<br>
+        - 6 medium tomatoes, pureed<br>
+        - 125ml olive oil<br>
+        - 2 tablespoons chopped fresh parsley (optional)<br>
+        - a generous amount of sea salt and black pepper<br>
+        =============================================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:15min  ›  Cook:1hr30min  ›  Ready in:1hr45min<br>
+        - Preheat the oven to 200 C / Fan 180 C / Gas 4. Find the largest baking dish or tin you have - 22x33cm or preferably larger, as you don't want the veg to be layered too deep (use two baking dishes if necessary).<br>
+        <br>
+        - Place the potatoes, courgettes and red onions in the baking dish. Pour over the pureed tomatoes and olive oil, and sprinkle with parsley (if using). Add salt and freshly ground pepper to taste. Toss the ingredients together so that the veg is evenly coated.<br>
+        <br>
+        - Bake in the preheated oven for 90 minutes, checking after 1 hour to stir the veg and adding a little bit of hot water only if the dish is too dry (there should be no water left in the end, however.) At this point I also taste the veg and add more seasoning if needed.<br>
+        <br>
+        - Cool slightly before serving, or serve at room temperature.<br>
+        ==============================================<br>
+        <u>Cook's Notes</u>:<br>
+        - You can 'puree' the tomato by cutting them in half and grating them on a large box grater, leaving the skin behind.<br>
+        <br>
+        - This might seem like a lot of time in the oven, but trust me - the bulk of the flavour is derived from this, and you definitely want some nice crusty and charred edges on your veg for maximum flavour.<br>
+        <br>
+        - Lastly, don't be afraid of salt and pepper with this dish - be liberal for best results. Start out as you normally would, and you can always add more seasoning when you check at the 1 hour mark!<br>
+    </p>
+</div>
+</body>
+</html>

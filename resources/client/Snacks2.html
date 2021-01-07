@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snacks2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Cucumber Sunomo:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 5<br>
+        - 2 large cucumbers, peeled<br>
+        - 4 tablespoons rice vinegar<br>
+        - 2 dessertspoons caster sugar<br>
+        - 1 teaspoon salt<br>
+        - 1 1/2 teaspoons minced root ginger<br>
+        ============================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:10min  ›  Extra time:1hr  ›  Ready in:1hr10min<br>
+        - Cut cucumbers in half lengthwise and scoop out any large seeds. Slice crosswise into very thin slices.<br>
+        <br>
+        - In a small bowl combine vinegar, sugar, salt and ginger. Mix well. Place cucumbers inside of the bowl, stir so that cucumbers are coated with the mixture. Refrigerate the bowl of cucumbers for at least 1 hour before serving.<br>
+    </p>
+</div>
+</body>
+</html>

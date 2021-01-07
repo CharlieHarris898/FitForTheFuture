@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main1</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Basil Chicken with Vermicelli:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 4<br>
+        - 250g (8 oz) vermicelli pasta<br>
+        - 1 dessertspoon olive oil<br>
+        - 1 small onion, finely chopped<br>
+        - 1 clove garlic, chopped<br>
+        - 2 (400g) tins chopped tomatoes<br>
+        - 4 boneless chicken breasts fillets - cooked and cubed<br>
+        - 1 small bunch fresh basil, chopped<br>
+        - 1/2 teaspoon salt<br>
+        - 1/2 dried crushed red chillies (optional)<br>
+        - 4 tablespoons freshly grated Parmesan<br>
+        ======================================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:10min  ›  Cook:25min  ›  Ready in:35min<br><br>
+        - Cook pasta according to packet instructions. Drain, and set aside.<br>
+        <br>
+        - In a large frying pan, heat oil over medium-high heat. Sauté the onions and garlic. Stir in the tomatoes, chicken, basil, salt and chillies. Reduce heat to medium, and cover frying pan. Simmer for about 5 minutes, stirring frequently.<br>
+        <br>
+        - Toss sauce with pasta to coat and heat through. Serve with Parmesan.<br>
+    </p>
+</div>
+</body>
+</html>

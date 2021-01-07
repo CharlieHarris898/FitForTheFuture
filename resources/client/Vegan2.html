@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vegan2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Madras Potato Curry:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 4<br>
+        - 3 tablespoons vegetable oil<br>
+        - 680g potatoes, cut into 1cm cubes<br>
+        - 250g cauliflower florets<br>
+        - 1 large onion, sliced<br>
+        - 2 cloves garlic, crushed<br>
+        - 1 tablespoon curry powder<br>
+        - 1/2 tablespoon ground ginger<br>
+        - 100g red lentils<br>
+        - 1 (400g) tin whole tomatoes, chopped<br>
+        - 250ml vegetable stock<br>
+        - 2 tablespoons malt vinegar<br>
+        - 1 tablespoon mango chutney<br>
+        - salt and pepper to taste<br>
+        - chopped fresh parsley for garnish<br>
+        ==================================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:30min  ›  Cook:30min  ›  Ready in:1hr<br>
+        - Warm oil in a large frying pan over medium heat. Stir in potatoes, cauliflower, onion and garlic; cook until the garlic begins to brown.<br>
+        <br>
+        - Stir in the curry powder and ginger, and cook about 3 minutes. Stir in lentils, tomatoes, vegetable stock, vinegar and chutney. Season with salt and pepper.<br>
+        <br>
+        - Cover, and simmer, stirring occasionally, until the lentils are tender, about 20 minutes. Top with parsley.
+    </p>
+</div>
+</body>
+</html>

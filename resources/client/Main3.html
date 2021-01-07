@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main3</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Shepard's Pie:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 4<br>
+        - 1 tbsp extra virgin olive oil<br>
+        - 450 g (1 lb) lean minced lamb<br>
+        - 1 large onion, finely chopped<br>
+        - 3 carrots, finely chopped<br>
+        - 3 celery sticks, thinly sliced<br>
+        - 2 leeks, thinly sliced<br>
+        - 1 tbsp tomato purée<br>
+        - 1 tbsp Worcestershire sauce<br>
+        - 360 ml (12 fl oz) lamb or beef stock, preferably home-made<br>
+        - 100 g (3½ oz) split red lentils<br>
+        - 3 tbsp chopped parsley<br>
+        - parsley sprigs to garnish<br>
+        - Potato and parsnip topping<br>
+        - 500 g (1 lb 2 oz) floury potatoes, peeled and cut into chunks<br>
+        - 500 g (1 lb 2 oz) parsnips, cut into chunks<br>
+        - 75 ml (2½ fl oz) semi-skimmed milk<br>
+        - 25 g (scant 1 oz) butter<br>
+        - salt and pepper<br>
+        =================================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:45min  ›  Cook:20min  ›  Ready in:1hr5min<br>
+        - Heat the oil in a large heavy saucepan. Add the lamb and cook over a high heat, stirring well with a wooden spoon to break up the meat, for about 5 minutes or until lightly browned. Push the meat to one side of the pan and add the onion. Reduce the heat to low and cook for 10 minutes, stirring occasionally, until the onion is softened and lightly browned.<br>
+        <br>
+        - Add the carrots, celery and leeks and stir well, then add the tomato purée, Worcestershire sauce, stock and lentils. Increase the heat and bring to the boil, stirring frequently. Partially cover with a lid, then reduce the heat to low and simmer for about 20 minutes, stirring occasionally.<br>
+        <br>
+        - While the meat mixture is cooking, preheat the oven to 200°C (400°F, gas mark 6) and prepare the topping.<br>
+        <br>
+        -Place the potato and parsnip chunks in a saucepan and pour over boiling water to cover by 5 cm (2 in). Bring back to the boil, then reduce the heat and cook for 15–20 minutes or until the potatoes and parsnips are very tender. Heat the milk in a small saucepan until hot.<br>
+        <br>
+        - Drain the potatoes and parsnips well, and return them to the pan. Pour the hot milk over them, then mash them until they are completely smooth. Beat in the butter and season with salt and pepper to taste.<br>
+        <br>
+        - Remove the meat mixture from the heat, add the chopped parsley and seasoning to taste and stir well. Spoon into a large ovenproof dish, about 2.6 litre (4½ pint) capacity. Top with the mashed vegetables, spreading in an even layer. Bake for 20 minutes or until bubbling and lightly browned. Serve hot, garnished with parsley sprigs.<br>
+        ===============================<br>
+        <u>Other ideas</u>:<br>
+        - Replace the lamb with lean minced venison or wild boar<br>
+        <br>
+        - Omit the leeks and stir 250 g (8 1/2 oz) fresh or frozen peas into the meat mixture after it has simmered for 15 minutes<br>
+        <br>
+        - In the topping, replace the parsnips with celeriac.<br>
+    </p>
+</div>
+</body>
+</html>

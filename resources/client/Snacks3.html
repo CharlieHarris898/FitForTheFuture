@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snacks3</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Baked Tortilla Chips:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 6<br>
+        - 1 (300g) packet flour tortillas<br>
+        - 1 tablespoon oil<br>
+        - 3 tablespoons lime juice<br>
+        - 1 teaspoon ground cumin<br>
+        - 1 teaspoon chilli powder<br>
+        - 1 teaspoon salt<br>
+        ==============================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:10min  ›  Cook:15min  ›  Ready in:25min<br>
+        - Preheat oven to 180 C / Gas mark 4.<br>
+        <br>
+        - Cut each tortilla into 8 triangular wedges and arrange in a single layer on a baking tray.<br>
+        <br>
+        - In a mister or spray bottle, combine the oil and lime juice. Mix well and spray each tortilla wedge until slightly moist. (Lightly brush on the oil and lime juice if you don't have a mister.)<br>
+        <br>
+        - Combine the cumin, chilli powder and salt in a small bowl and sprinkle on the wedges.<br>
+        <br>
+        - Bake for about 7 minutes. Rotate the tray and bake for another 8 minutes or until the wedges are crisp, but not too brown. Serve warm or room temperature with salsas, dips or guacamole.<br>
+    </p>
+</div>
+</body>
+</html>

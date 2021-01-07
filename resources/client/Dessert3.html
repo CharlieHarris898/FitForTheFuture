@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dessert3</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Roasted Banana Frozen Yoghurt:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Makes: 1 litre<br>
+        - 4 very ripe bananas<br>
+        - 330g dark brown soft sugar<br>
+        - 900g plain Greek yogurt<br>
+        - 1 teaspoon vanilla extract<br>
+        =================================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:5min  ›  Cook:15min  ›  Extra time:1hr freezing  ›  Ready in:1hr20min<br>
+        - Preheat oven to 180 C / Gas 4.<br>
+        <br>
+        - Line a 20cm tin with foil. Peel the bananas and cut lengthways. Place bananas in the tin and cover with the brown sugar. Bake until the sugar melts and the banana is soft and roasted.<br>
+        <br>
+        - Reserve 1 banana and transfer the others along with the melted sugar to a large bowl. Mix in the yoghurt and the vanilla. Pour yoghurt in the ice cream maker and freeze it according to the manufacturer's instructions. Add the reserved banana just before you turn off the ice cream maker, this will ensure you have some chunks of banana in the frozen yoghurt. Enjoy it!<br>
+    </p>
+</div>
+</body>
+</html>

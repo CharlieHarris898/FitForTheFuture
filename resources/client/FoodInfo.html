@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View User Info</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+        function getFood() {
+            console.log("Invoked getFood()");
+
+            const formData = new FormData(document.getElementById('foodForm'));
+            var url = "/foodinfo/list";
+
+            fetch(url, {
+                method: "POST",
+                body: formData,
+            }).then(response => {
+                return response.json();                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    console.log(response.toString());
+                    fillUserForm(response);
+                }
+            });
+
+        }
+        function fillUserForm(data) {
+            console.log("invoked fillUserForm()");
+
+            document.getElementById("Food").innerHTML = data.Name;
+            document.getElementById("SugarP").innerHTML = data.SugarPer100;
+            document.getElementById("FatP").innerHTML = data.FatPer100;
+            document.getElementById("CalorieP").innerHTML = data.CaloriePer100;
+            document.getElementById("V").innerHTML = data.Vegetarian;
+            document.getElementById("Ve").innerHTML = data.Vegan;
+            document.getElementById("Fruit").innerHTML = data.FruitAndVeg;
+            document.getElementById("Carb").innerHTML= data.Carbohydrate;
+            document.getElementById("Protein").innerHTML= data.Protein;
+            document.getElementById("Dairy").innerHTML= data.Dairy;
+            document.getElementById("Fat").innerHTML= data.Fat;
+
+        }
+    </script>
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="Home" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfoSelected" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div class="mainSection" id="scroll">
+    <h1 class="heading" style="font-size: 60px";>Food Info</h1>
+    <form id="foodForm">
+        <input type="radio" id="Apple" name="Food" value="Apple" onclick="getFood()">
+        <label for="Apple">Apple</label>
+        <input type="radio" id="Potato" name="Food" value="Potato" onclick="getFood()">
+        <label for="Potato">Potato</label>
+        <input type="radio" id="Orange" name="Food" value="Orange" onclick="getFood()">
+        <label for="Orange">Orange</label>
+    </form>
+    <table class="UserInfoTable">
+        <tr>
+            <td id="firstColumn">Food:</td>
+            <td id="secondColumn"><div id="Food"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Sugar (per 100g):</td>
+            <td id="secondColumn"><div id="SugarP"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Fat (per 100g):</td>
+            <td id="secondColumn"><div id="FatP"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Calories (per 100g):</td>
+            <td id="secondColumn"><div id="CalorieP"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Vegetarian:</td>
+            <td id="secondColumn"><div id="V"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Vegan:</td>
+            <td id="secondColumn"><div id="Ve"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Fruit & Veg:</td>
+            <td id="secondColumn"><div id="Fruit"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Carbohydrate:</td>
+            <td id="secondColumn"><div id="Carb"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Protein:</td>
+            <td id="secondColumn"><div id="Protein"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Dairy:</td>
+            <td id="secondColumn"><div id="Dairy"></div></td>
+        </tr>
+        <tr>
+            <td id="firstColumn">Fats and Sugars:</td>
+            <td id="secondColumn"><div id="Fat"></div></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

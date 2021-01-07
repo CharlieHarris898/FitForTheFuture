@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Cashew Nut Roast:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 4<br>
+        - 50g butter or margarine<br>
+        - 1 onion, chopped<br>
+        - 1 teaspoon dried thyme<br>
+        - 1 teaspoon wholemeal flour<br>
+        - 300g cashew nuts, finely chopped<br>
+        - 50g wholemeal breadcrumbs (regular work just as well)<br>
+        - 500g puff pastry<br>
+        - 100g carrots, grated<br>
+        - 100g courgettes, grated<br>
+        =================================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:20min  ›  Cook:45min  ›  Ready in:1hr5min <br><br>
+        - Preheat oven to 200 C / Gas 6.<br>
+        <br>
+        - Melt butter and fry onion for 5 minutes till soft.<br>
+        <br>
+        - Add thyme, flour and 300ml (1/2 pint) of water. Stir till thickened, remove from heat. Add nuts, breadcrumbs, seasoning, allow to cool.<br>
+        <br>
+        - Roll out the pastry to a rectangle 38x25cm (15x10 in). Place half the mixture in centre. Cover with grated carrots and courgettes and top with remaining nut mixture.<br>
+        <br>
+        - Brush edges of pastry with water. Wrap round the filling and place on a dampened tray.<br>
+        <br>
+        - Bake for 45 minutes in the preheated oven.
+    </p>
+</div>
+</body>
+</html>

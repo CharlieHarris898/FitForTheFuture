@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dessert1</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Date Pecan Squares:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 18<br>
+        - 125g plain flour<br>
+        - 1 teaspoon baking powder<br>
+        - 1 pinch salt<br>
+        - 150g dark brown soft sugar<br>
+        - 3 eggs, beaten<br>
+        - 1/2 teaspoon vanilla extract<br>
+        - 200g chopped pecans<br>
+        - 350g chopped dates<br>
+        =========================================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:15min  ›  Cook:35min  ›  Ready in:50min<br>
+        - Preheat oven to 170 C / Gas 3. Grease and flour a 20x30cm tin. Sift together the flour, baking powder and salt. Set aside.<br>
+        <br>
+        - In a large bowl, cream together the sugar and eggs, then stir in the flour mixture. Stir in the vanilla, pecans and dates.<br>
+        <br>
+        - Pour mixture into prepared tin. Bake in the preheated oven for 35 minutes, or until a skewer inserted into the centre of the cake comes out clean. Cut into squares while cake is still warm.<br>
+    </p>
+</div>
+</body>
+</html>

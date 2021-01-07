@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dessert2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Strawberry Rhubarb Crumble:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 6<br>
+        - 500g chopped fresh rhubarb<br>
+        - 1 punnet strawberries, hulled and sliced<br>
+        - 1 tablespoon honey<br>
+        - 80g rolled oats<br>
+        - 100g dark brown soft sugar<br>
+        - 50g butter<br>
+        - 1 teaspoon ground cinnamon<br>
+        ========================================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:20min  ›  Cook:40min  ›  Ready in:1hr<br>
+        - Preheat the oven to 180 C / Gas mark 4.<br>
+        <br>
+        - In a medium bowl, stir together the rhubarb, strawberries and honey. Transfer to a shallow baking dish. In the same bowl, stir together the oats, brown sugar and cinnamon. Mix in the butter until crumbly, and spread over the top of the fruit.<br>
+        <br>
+        - Bake for 40 minutes in the preheated oven, until rhubarb is tender and the topping is toasted. Serve warm.<br>
+    </p>
+</div>
+</body>
+</html>

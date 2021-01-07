@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vegan3</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Mushroom Couscous Risotto:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 4<br>
+        - knob butter or margarine<br>
+        - 1/2 onion, chopped<br>
+        - 1-2 cloves garlic, crushed<br>
+        - 600ml vegetable stock<br>
+        - 200g button mushrooms, sliced<br>
+        - couscous<br>
+        =====================================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:5min  ›  Cook:25min  ›  Ready in:30min<br>
+        - Make the stock and keep it hot.<br>
+        <br>
+        - Melt butter and fry the onion and garlic for a couple of minutes. Then add the mushrooms (and any other veg you want to use - courgette and spinach work well). Fry on moderate heat for 5 minutes.<br>
+        <br>
+        - Add the couscous, about 3 tablespoons per person, and mix with the onions, garlic and mushrooms.<br>
+        <br>
+        - Add the stock, one ladleful at a time. Add the next ladleful when it is all absorbed by the couscous. Keep stirring. After about 10 minutes the couscous will not want to absorb any more so reduce the final ladleful to the desired consistency - it should look creamy. Serve and enjoy!
+    </p>
+</div>
+</body>
+</html>

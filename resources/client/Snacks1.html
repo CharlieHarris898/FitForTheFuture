@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snacks1</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        function goToHome() {
+            console.log("Invoked goTohome() ");
+            window.open("Home.html", "_self");
+        }
+        function goToExercises() {
+            console.log("Invoked goToExercises() ");
+            window.open("Exercises.html", "_self");
+        }
+        function goToRecipes() {
+            console.log("Invoked goToRecipes() ");
+            window.open("Recipes.html", "_self");
+        }
+        function goToFoodInfo() {
+            console.log("Invoked goToFoodInfo() ");
+            window.open("FoodInfo.html", "_self");
+        }
+        function goToCalories() {
+            console.log("Invoked goToCalories() ");
+            window.open("Calories.html", "_self");
+        }
+        function goToInfo() {
+            console.log("Invoked goToInfo() ");
+            window.open("User Information.html", "_self");
+        }
+    </script>
+
+</head>
+<body>
+<div class="header">
+    <button class="NavButton" id="HomeSelected" onclick='goToHome();'>Home</button>
+    <button class="NavButton" id="Calories" onclick='goToCalories();'>Calorie Calculator</button>
+    <button class="NavButton" id="Info" onclick='goToInfo();'>Your Info</button>
+    <img src="FitForTheFuture.png" id="LogoNav"/>
+    <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
+    <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
+    <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+</div>
+
+<div id="scroll" class="mainSection">
+    <h1 class="heading" style="font-size: 60px";>Roasted Pumpkin Seeds:</h1>
+    <p id="Recipe Paragraph detailed">
+        <u>Ingredients</u>: <br>
+        Serves: 8<br>
+        - 1 1/2 tablespoons olive oil or melted butter<br>
+        - 1/2 teaspoon salt<br>
+        - 1/8 teaspoon garlic salt<br>
+        - 2 teaspoons Worcestershire sauce<br>
+        - 150g (5 oz) raw whole pumpkin seeds<br>
+        =================================<br>
+        <u>Method</u>:<br><br>
+        <u>Prep</u>:10min  ›  Cook:1hr  ›  Ready in:1hr10min<br>
+        - Preheat oven to 140 C / Gas mark 1.<br>
+        <br>
+        - Combine the olive oil, salt, garlic salt, Worcestershire sauce and pumpkin seeds. Mix thoroughly and place in shallow baking dish.<br>
+        <br>
+        - Bake for 1 hour, stirring occasionally.<br>
+    </p>
+</div>
+</body>
+</html>
