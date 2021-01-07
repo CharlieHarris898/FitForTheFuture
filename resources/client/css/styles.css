@@ -26,9 +26,9 @@
 .mainSection {
     text-align: center;
     background: aliceblue;
-    position: fixed;
+    position: absolute;
     top: 400px;
-    height: 550px;
+    height: 55%;
     bottom: 25px;
     left:25px;
     right:25px;
@@ -257,7 +257,7 @@
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background: white
+    background: deepskyblue;
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
