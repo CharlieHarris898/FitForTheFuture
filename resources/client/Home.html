@@ -46,6 +46,25 @@
             console.log("Invoked goToInfo() ");
             window.open("User Information.html", "_self");
         }
+        function logoutUser() {
+            console.log("Invoked logoutUser()");
+            const url = "/userinformation/logoutUser/";
+
+            fetch(url, {
+                method: "GET",
+            }).then(response => {
+                return "";                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    console.log(response);
+                    alert("Logout Successful");
+                    window.open("Welcome.html","_self");
+
+                }
+            });
+        }
     </script>
 
 </head>
@@ -58,13 +77,14 @@
     <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
     <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
     <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+    <button id="Logout" onclick='logoutUser();'>Logout</button>
 </div>
 
 <div id="scroll" class="mainSection">
     <h1 class="heading" style="font-size: 60px";>Home Page</h1>
-    <p id="Recipe Paragraph">Hello, Welcome to the Fit For The Future website. Thank you for creating an account and joining this community designed to keep/get you healthy for you today, and tomorrow!
-        You can input details based on your exercises and find out how many calories you burnt (you can see a record of this under the Exercises tab). You can look at some call recipes or workouts to try
-        out. You can even see some commmon food item's health info! If you need to view your own information or edit it, go to the User Info tab. </p>
+    <p id="Recipe Paragraph" style="margin-top: auto;">Hello, Welcome to the Fit For The Future website.  Thank you for creating an account and joining this community designed to keep/get you healthy for you today, and tomorrow!
+         You can input details based on your exercises and find out how many calories you burnt (you can see a record of this under the Exercises tab).  You can look at some call recipes or workouts to try
+        out.  You can even see some common food item's health info!  If you need to view your own information or edit it, go to the User Info tab. </p>
 </div>
 </body>
 </html>

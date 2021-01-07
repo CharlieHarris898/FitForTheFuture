@@ -149,6 +149,25 @@
                 }
             });
         }
+        function logoutUser() {
+            console.log("Invoked logoutUser()");
+            const url = "/userinformation/logoutUser/";
+
+            fetch(url, {
+                method: "GET",
+            }).then(response => {
+                return "";                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    console.log(response);
+                    alert("Logout Successful");
+                    window.open("Welcome.html","_self");
+
+                }
+            });
+        }
     </script>
 
 </head>
@@ -165,50 +184,66 @@
     <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
     <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
     <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+    <button id="Logout" onclick='logoutUser();'>Logout</button>
 </div>
 
 <div id="scroll" class="mainSection">
     <h1 class="heading" style="font-size: 60px";>Calorie Calculator</h1>
     <h2 class="heading" style="font-size: 45px";> Input info here:</h2>
     <form id="calculatorForm">
-        <p>Type of Exercise:</p>
-        <input type="radio" id="Treadmill" name="Exercise" value="Treadmill">
-        <label for="Treadmill">Treadmill (Running)</label>
-        <input type="radio" id="Front Crawl" name="Exercise" value="Front Crawl">
-        <label for="Front Crawl">Swimming (Front Crawl)</label>
-        <input type="radio" id="Breaststroke" name="Exercise" value="Swimming (Breaststroke)">
-        <label for="Breaststroke">Swimming (Breaststroke)</label>
-        <input type="radio" id="Cycling" name="Exercise" value="Cycling">
-        <label for="Cycling">Cycling</label>
-        <input type="radio" id="Football" name="Exercise" value="Football">
-        <label for="Football">Football</label>
-        <input type="radio" id="Rowing" name="Exercise" value="Rowing">
-        <label for="Rowing">Rowing</label>
-        <input type="radio" id="Pushups" name="Exercise" value="Pushups">
-        <label for="Pushups">Pushups</label>
-        <input type="radio" id="Squats" name="Exercise" value="Squats">
-        <label for="Squats">Squats</label>
-        <input type="radio" id="Aerobics" name="Exercise" value="Aerobics">
-        <label for="Aerobics">Aerobics</label>
+        <hr>
+        <p style="font-size: 35px; font-family: Rockwell, serif; color: black">Type of Exercise:</p>
+        <div class="radio-toolbar">
+            <input type="radio" id="Treadmill" name="Exercise" value="Treadmill">
+            <label for="Treadmill" style="font-size: 35px; font-family: Rockwell, serif; color: black">Treadmill (Running)</label>
 
-        <p>Intensity:</p>
-        <input type="radio" id="low" name="Intensity" value="low">
-        <label for="low">Low</label>
-        <input type="radio" id="medium" name="Intensity" value="medium">
-        <label for="medium">Medium</label>
-        <input type="radio" id="high" name="Intensity" value="high">
-        <label for="high">High</label>
+            <input type="radio" id="Front Crawl" name="Exercise" value="Front Crawl">
+            <label for="Front Crawl" style="font-size: 35px; font-family: Rockwell, serif; color: black">Swimming (Front Crawl)</label>
 
-        <p> Enter time spent on exercise (minutes):</p>
-        <input type="number"  id="time" name="time"><br>
+            <input type="radio" id="Breaststroke" name="Exercise" value="Swimming (Breaststroke)">
+            <label for="Breaststroke" style="font-size: 35px; font-family: Rockwell, serif; color: black">Swimming (Breaststroke)</label>
 
-        <p> Enter date exercise completed:</p>
-        <input type="date"  id="date" name="date"><br>
+            <input type="radio" id="Cycling" name="Exercise" value="Cycling">
+            <label for="Cycling" style="font-size: 35px; font-family: Rockwell, serif; color: black">Cycling</label>
 
+            <input type="radio" id="Football" name="Exercise" value="Football">
+            <label for="Football" style="font-size: 35px; font-family: Rockwell, serif; color: black">Football</label>
+
+            <input type="radio" id="Rowing" name="Exercise" value="Rowing">
+            <label for="Rowing" style="font-size: 35px; font-family: Rockwell, serif; color: black">Rowing</label>
+
+            <input type="radio" id="Pushups" name="Exercise" value="Pushups">
+            <label for="Pushups" style="font-size: 35px; font-family: Rockwell, serif; color: black">Pushups</label>
+
+            <input type="radio" id="Squats" name="Exercise" value="Squats">
+            <label for="Squats" style="font-size: 35px; font-family: Rockwell, serif; color: black">Squats</label>
+
+            <input type="radio" id="Aerobics" name="Exercise" value="Aerobics">
+            <label for="Aerobics" style="font-size: 35px; font-family: Rockwell, serif; color: black">Aerobics</label>
+        </div>
+        <hr>
+        <p style="font-size: 35px; font-family: Rockwell, serif; color: black">Intensity:</p>
+        <div class="radio-toolbar">
+            <input type="radio" id="low" name="Intensity" value="low">
+            <label for="low" style="font-size: 35px; font-family: Rockwell, serif; color: black">Low</label>
+
+            <input type="radio" id="medium" name="Intensity" value="medium">
+            <label for="medium" style="font-size: 35px; font-family: Rockwell, serif; color: black">Medium</label>
+
+            <input type="radio" id="high" name="Intensity" value="high">
+            <label for="high" style="font-size: 35px; font-family: Rockwell, serif; color: black">High</label>
+        </div>
+        <hr>
+        <p style="font-size: 35px; font-family: Rockwell, serif; color: black"> Enter time spent on exercise (minutes):</p>
+        <input type="number"  id="time" name="time" style="border-radius: 12px; font-family: Rockwell, serif; font-size: 30px;"><br>
+        <hr>
+        <p style="font-size: 35px; font-family: Rockwell, serif; color: black"> Enter date exercise completed:</p>
+        <input type="date"  id="date" name="date" style="border-radius: 12px; font-family: Rockwell, serif; font-size: 30px;"><br>
+        <hr>
     </form>
-    <button onclick="calculateCalories()" onclick="showCalories()">Calculate</button>
-    <h3>Calories Burnt:</h3>
-    <p id="finalCaloriesBurnt"></p>
+    <button onclick="calculateCalories()" onclick="showCalories()" id="submitButton" style="font-size: 40px;">Calculate</button>
+    <h3 style="font-size: 35px; font-family: Rockwell, serif; color: black">Calories Burnt:</h3>
+    <p id="finalCaloriesBurnt" style="font-size: 35px; font-family: Rockwell, serif; color: black"></p>
 </div>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script>
     <script>
 
@@ -32,15 +33,24 @@
 
 </head>
 <body>
-<h1>Please Login Here:</h1>
-<form id="loginForm">
-    <p1>Enter Username:  </p1>
-    <input type="text" name="Username" id="Username"><br><br>
-    <p1>Enter Password:  </p1>
-    <input type="password" name="Password" id="Password"><br><br>
-</form>
+<div class="headerWelcome">
+    <img src="FitForTheFuture.png" id="LogoWelcome" height="309px" width="619px"/>
+</div>
 
-<button class="button" onclick='loginUser();'>LOGIN</button>
+<div id="scroll" class="mainSectionWelcome">
+    <h1 class="heading" style="font-size: 60px";>Please Login Here:</h1>
+    <form id="loginForm">
+        <p1 style="font-size: 35px; font-family: Rockwell, serif; color: black">Username: </p1>
+        <input type="text" name="Username" id="Username" style="border-radius: 12px; font-family: Rockwell, serif; font-size: 30px "><br><br>
+        <p1 style="font-size: 35px; font-family: Rockwell, serif; color: black">Password:  </p1>
+        <input type="password" name="Password" id="Password" style="border-radius: 12px; font-family: Rockwell, serif; font-size: 30px "><br><br>
+    </form>
+    <button class="button" id="submitButton" onclick='loginUser();'>Login</button>
+</div>
+
+
+
+
 
 </body>
 </html>

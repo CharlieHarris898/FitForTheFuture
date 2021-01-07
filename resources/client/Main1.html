@@ -29,6 +29,25 @@
             console.log("Invoked goToInfo() ");
             window.open("User Information.html", "_self");
         }
+        function logoutUser() {
+            console.log("Invoked logoutUser()");
+            const url = "/userinformation/logoutUser/";
+
+            fetch(url, {
+                method: "GET",
+            }).then(response => {
+                return "";                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    console.log(response);
+                    alert("Logout Successful");
+                    window.open("Welcome.html","_self");
+
+                }
+            });
+        }
     </script>
 
 </head>
@@ -41,6 +60,7 @@
     <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
     <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
     <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+    <button id="Logout" onclick='logoutUser();'>Logout</button>
 </div>
 
 <div id="scroll" class="mainSection">

@@ -186,6 +186,58 @@
             });
         }
 
+        function deleteUser(){
+            let confirmation = prompt("Are you sure? Type 'Yes' to confirm, or press Cancel to cancel deleting your account");
+            if (confirmation == null){
+                return;
+            }
+            confirmation = confirmation.charAt(0).toUpperCase() + confirmation.slice(1);
+
+            if (confirmation == 'Yes'){
+                console.log("Invoked deleteUser()")
+                const url = "/userinformation/deleteUser/";
+
+                fetch(url, {
+                    method: "GET",
+                }).then(response => {
+                    return "";                 //return response to JSON
+                }).then(response => {
+                    if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                        alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                    } else {
+                        console.log(response);
+                        alert("Account Deletion Successful");
+                        window.open("Welcome.html","_self");
+
+                    }
+                });
+            }
+            else{
+                return alert("If you wish to delete your account, please type in the prompt: 'Yes' or 'yes', nothing else will be accepted");
+            }
+
+        }
+
+        function logoutUser() {
+            console.log("Invoked logoutUser()");
+            const url = "/userinformation/logoutUser/";
+
+            fetch(url, {
+                method: "GET",
+            }).then(response => {
+                return "";                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    console.log(response);
+                    alert("Logout Successful");
+                    window.open("Welcome.html","_self");
+
+                }
+            });
+        }
+
 
 
     </script>
@@ -199,6 +251,7 @@
     <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
     <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
     <button class="NavButton" id="FoodInfo" onclick='goToFoodInfo();'>Food Information</button>
+    <button id="Logout" onclick='logoutUser();'>Logout</button>
 </div>
 
 <div id="scroll" class="mainSection">
@@ -244,7 +297,7 @@
         </tr>
     </table>
     <br>
-    <button class="UserButton" onclick='postDeleteUser();' style="background:red; color:black; width:400px; height:50px; font-size:25px;">DELETE USER ACCOUNT</button>
+    <button class="UserButton" id="DeleteUserButton" onclick='deleteUser();'>DELETE USER ACCOUNT</button>
 </div>
 
 

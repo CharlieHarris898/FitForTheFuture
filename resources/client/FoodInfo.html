@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <title>View User Info</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        th, td, p, input, h3 {
+            font:30px 'Rockwell';
+            color:navy;
+        }
+        table, th, td {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            border: solid 5px darkslateblue;
+        }
+        table {
+            border-radius: 12px;
+        }
+        th {
+            font-weight:bold;
+            color:black;
+        }
+    </style>
     <script>
         function goToHome() {
             console.log("Invoked goTohome() ");
@@ -53,6 +72,55 @@
         function fillUserForm(data) {
             console.log("invoked fillUserForm()");
 
+            if (data.Vegetarian == '1'){
+                data.Vegetarian = ("Yes");
+            }
+            else{
+                data.Vegetarian = ("No");
+            }
+
+            if (data.Vegan == '1'){
+                data.Vegan = ("Yes");
+            }
+            else{
+                data.Vegan = ("No");
+            }
+
+            if (data.FruitAndVeg == '1'){
+                data.FruitAndVeg = ("Yes");
+            }
+            else{
+                data.FruitAndVeg = ("No");
+            }
+
+            if (data.Carbohydrate == '1'){
+                data.Carbohydrate = ("Yes");
+            }
+            else{
+                data.Carbohydrate = ("No");
+            }
+
+            if (data.Protein == '1'){
+                data.Protein = ("Yes");
+            }
+            else{
+                data.Protein = ("No");
+            }
+
+            if (data.Dairy == '1'){
+                data.Dairy = ("Yes");
+            }
+            else{
+                data.Dairy = ("No");
+            }
+
+            if (data.Fat == '1'){
+                data.Fat = ("Yes");
+            }
+            else{
+                data.Fat = ("No");
+            }
+
             document.getElementById("Food").innerHTML = data.Name;
             document.getElementById("SugarP").innerHTML = data.SugarPer100;
             document.getElementById("FatP").innerHTML = data.FatPer100;
@@ -65,6 +133,27 @@
             document.getElementById("Dairy").innerHTML= data.Dairy;
             document.getElementById("Fat").innerHTML= data.Fat;
 
+
+
+        }
+        function logoutUser() {
+            console.log("Invoked logoutUser()");
+            const url = "/userinformation/logoutUser/";
+
+            fetch(url, {
+                method: "GET",
+            }).then(response => {
+                return "";                 //return response to JSON
+            }).then(response => {
+                if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
+                    alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
+                } else {
+                    console.log(response);
+                    alert("Logout Successful");
+                    window.open("Welcome.html","_self");
+
+                }
+            });
         }
     </script>
 </head>
@@ -77,17 +166,22 @@
     <button class="NavButton" id="Exercises" onclick='goToExercises();'>Exercises</button>
     <button class="NavButton" id="Recipes" onclick='goToRecipes();'>Recipes</button>
     <button class="NavButton" id="FoodInfoSelected" onclick='goToFoodInfo();'>Food Information</button>
+    <button id="Logout" onclick='logoutUser();'>Logout</button>
 </div>
 
 <div class="mainSection" id="scroll">
     <h1 class="heading" style="font-size: 60px";>Food Info</h1>
     <form id="foodForm">
-        <input type="radio" id="Apple" name="Food" value="Apple" onclick="getFood()">
-        <label for="Apple">Apple</label>
-        <input type="radio" id="Potato" name="Food" value="Potato" onclick="getFood()">
-        <label for="Potato">Potato</label>
-        <input type="radio" id="Orange" name="Food" value="Orange" onclick="getFood()">
-        <label for="Orange">Orange</label>
+        <div class="radio-toolbar">
+            <input type="radio" id="Apple" name="Food" value="Apple" onclick="getFood()">
+            <label for="Apple" style="font-size: 35px; font-family: Rockwell, serif; color: black">Apple</label>
+
+            <input type="radio" id="Potato" name="Food" value="Potato" onclick="getFood()">
+            <label for="Potato" style="font-size: 35px; font-family: Rockwell, serif; color: black">Potato</label>
+
+            <input type="radio" id="Orange" name="Food" value="Orange" onclick="getFood()">
+            <label for="Orange" style="font-size: 35px; font-family: Rockwell, serif; color: black">Orange</label>
+        </div>
     </form>
     <table class="UserInfoTable">
         <tr>

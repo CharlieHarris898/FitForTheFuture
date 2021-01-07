@@ -37,7 +37,7 @@ public class UserExercises {
 
         int userID = UserInformation.validateToken(token);
         if (userID == -1){
-            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         }
         try {
             PreparedStatement ps = Main.db.prepareStatement("INSERT INTO UserExercises (UserID, Exercise, Duration, Intensity, CaloriesBurned, Date) VALUES (?, ?, ?, ?, ?, ?)");
@@ -64,12 +64,12 @@ public class UserExercises {
         System.out.println("Invoked userExercises.getInfo()");
         int userID;
         if (token == null) {
-            return "{\"Error\": \"Something has gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         } else{
             userID=validateToken(token);
         }
         if (userID == -1){
-            return "{\"Error\": \"Something has gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         }
 
         JSONArray response = new JSONArray();

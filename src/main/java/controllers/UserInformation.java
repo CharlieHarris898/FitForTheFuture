@@ -32,7 +32,7 @@ public class UserInformation {
             statement.setString(1, username);
             statement.setString(2, password);
             ResultSet results = statement.executeQuery();
-            //if there is not record with this email and password, condition below will be false
+            //if there is not record with this username and password, condition below will be false
             if (results.next() == false) {
                 return "{\"Error\": \"Username or password is incorrect.  Are you sure you've registered? \"}";
             } else {
@@ -52,8 +52,6 @@ public class UserInformation {
             return "{\"Error\": \"Server side error!\"}";
         }
     }
-
-
 
 
     public static int validateToken(Cookie Token) {     //returns the userID that of the record with the cookie value
@@ -123,12 +121,12 @@ public class UserInformation {
         System.out.println("Invoked User.userGet()");
         int userID;
         if (token == null) {
-            return "{\"Error\": \"Something has gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         } else{
             userID=validateToken(token);
         }
         if (userID == -1){
-            return "{\"Error\": \"Something has gone wrong.  Please contact the administrator with the error code UC-UG. \"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         }
 
         try {
@@ -168,7 +166,7 @@ public class UserInformation {
         System.out.println("Invoked userInformation.updateUsername()");
         int userID = validateToken(token);
         if (userID == -1){
-            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         }
         try {
             PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET Username = ? WHERE UserID = ?");
@@ -189,7 +187,7 @@ public class UserInformation {
         System.out.println("Invoked userInformation.updatePassword()");
         int userID = validateToken(token);
         if (userID == -1){
-            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         }
         try {
             PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET Password = ? WHERE UserID = ?");
@@ -210,7 +208,7 @@ public class UserInformation {
         System.out.println("Invoked userInformation.updateGender()");
         int userID = validateToken(token);
         if (userID == -1){
-            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         }
         try {
             PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET Gender = ? WHERE UserID = ?");
@@ -231,7 +229,7 @@ public class UserInformation {
         System.out.println("Invoked userInformation.updateDOB()");
         int userID = validateToken(token);
         if (userID == -1){
-            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         }
         try {
             PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET DOB = ? WHERE UserID = ?");
@@ -252,7 +250,7 @@ public class UserInformation {
         System.out.println("Invoked userInformation.updateHeight()");
         int userID = validateToken(token);
         if (userID == -1){
-            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         }
         try {
             PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET Height = ? WHERE UserID = ?");
@@ -273,7 +271,7 @@ public class UserInformation {
         System.out.println("Invoked userInformation.updateWeight()");
         int userID = validateToken(token);
         if (userID == -1){
-            return "{\"Error\": \"Login Status Error. Please Login Again.\"}";
+            return "{\"Error\": \"Login Status Error. Please press the logout button and login again.\"}";
         }
         try {
             PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET Weight = ? WHERE UserID = ?");
@@ -286,6 +284,56 @@ public class UserInformation {
             System.out.println("Database error: " + exception.getMessage());
             return "{\"Error\": \"Error updating Weight.\"}";
 
+        }
+    }
+
+    @GET
+    @Path("logoutUser")
+    public String logoutUser(@CookieParam("token") Cookie token) {
+        System.out.println("Invoked user.logoutUser()");
+        int userID;
+        if (token == null) {
+            return ""; //we just return here as if they have no Token, they should be sent to the user login page anyways
+        } else {
+            userID = validateToken(token);
+        }
+        if (userID == -1) {
+            return ""; //we just return here as if they have no User ID, they should be sent to the user login page anyways
+        }
+        try{
+            PreparedStatement ps = Main.db.prepareStatement("UPDATE UserInformation SET token = NULL WHERE UserID = ?");
+            ps.setInt(1, userID);
+            ps.execute();
+            return "{\"Success\": \"User Logged Out\"}";
+        }
+        catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Error during user logout.\"}";
+        }
+    }
+
+    @GET
+    @Path("deleteUser")
+    public String deleteUser(@CookieParam("token") Cookie token) {
+        System.out.println("Invoked user.deleteUser()");
+        int userID;
+        if (token == null) {
+            return ""; //we just return here as if they have no Token, they should be sent to the user login page anyways
+        } else {
+            userID = validateToken(token);
+        }
+        if (userID == -1) {
+            return ""; //we just return here as if they have no User ID, they should be sent to the user login page anyways
+        }
+        try{
+            PreparedStatement ps = Main.db.prepareStatement("DELETE FROM UserInformation WHERE UserID = ?");
+            ps.setInt(1, userID);
+            ps.execute();
+            return "{\"Success\": \"User Account Deleted\"}";
+        }
+        catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Error during account termination.\"}";
         }
     }
 }

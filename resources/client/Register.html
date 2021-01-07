@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <link rel="stylesheet" href="css/styles.css">
     <script>
         "use strict";
 
@@ -29,28 +30,42 @@
 
     </script>
 </head>
-
 <body>
-<h1> Register Here:</h1>
-<form id="registerForm">
-    <label for="username">Username:</label><br>
-    <input type="text" id="Username" name="Username" minlength="5" maxlength="25"><br>
-    <label for="password">Password:</label><br>
-    <input type="text" id="Password" name="Password" minlength="5" maxlength="25"><br>
-    <p> Enter your Gender:</p>
-    <input type="radio" id="male" name="Gender" value="Male">
-    <label for="male">Male</label><br>
-    <input type="radio" id="female" name="Gender" value="Female">
-    <label for="female">Female</label><br>
-    <input type="radio" id="other" name="Gender" value="Other">
-    <label for="other">Other</label><br>
-    <p> Enter your Date of Birth:</p>
-    <input type="date" id="DOB" name="DOB">
-    <p> Enter your Height (CM):</p>
-    <input type="number" id="height" name="Height" min="50" max="300"><br>
-    <p> Enter your Weight (KG):</p>
-    <input type="number" id="weight" name="Weight" min="10" max="200"><br><br>
-</form>
-<button onclick="submitUser()">Register</button>
+
+<div class="headerWelcome">
+    <img src="FitForTheFuture.png" id="LogoWelcome" height="309px" width="619px"/>
+</div>
+<div id="scroll" class="mainSectionWelcome">
+    <h1 class="heading" style="font-size: 60px";>Please Register Here:</h1>
+    <hr>
+    <form id="registerForm">
+        <label for="username" style="font-size: 35px; font-family: Rockwell, serif; color: black">Username:</label>
+        <input type="text" id="Username" name="Username" minlength="5" maxlength="25" style="border-radius: 12px; font-family: Rockwell, serif; font-size: 30px;"><br><br>
+
+        <label for="password" style="font-size: 35px; font-family: Rockwell, serif; color: black">Password:</label>
+        <input type="text" id="Password" name="Password" minlength="5" maxlength="25" style="border-radius: 12px; font-family: Rockwell, serif; font-size: 30px;"><br>
+        <hr>
+        <p style="font-size: 35px; font-family: Rockwell, serif; color: black"> Enter your Gender:</p>
+        <div class="radio-toolbar">
+            <input type="radio" id="male" name="Gender" value="Male">
+            <label for="male" style="font-size: 35px; font-family: Rockwell, serif; color: black">Male</label>
+            <input type="radio" id="female" name="Gender" value="Female">
+            <label for="female" style="font-size: 35px; font-family: Rockwell, serif; color: black">Female</label>
+            <input type="radio" id="other" name="Gender" value="Other">
+            <label for="other" style="font-size: 35px; font-family: Rockwell, serif; color: black">Other</label>
+        </div>
+        <hr>
+        <p style="font-size: 35px; font-family: Rockwell, serif; color: black"> Enter your Date of Birth:</p>
+        <input type="date" id="DOB" name="DOB" style="border-radius: 12px; font-family: Rockwell, serif; font-size: 30px;">
+        <hr>
+        <p style="font-size: 35px; font-family: Rockwell, serif; color: black"> Enter your Height (CM):</p>
+        <input type="number" id="height" name="Height" min="50" max="300" style="border-radius: 12px; font-family: Rockwell, serif; font-size: 30px;"><br>
+
+        <p style="font-size: 35px; font-family: Rockwell, serif; color: black"> Enter your Weight (KG):</p>
+        <input type="number" id="weight" name="Weight" min="10" max="200" style="border-radius: 12px; font-family: Rockwell, serif; font-size: 30px;"><br><br>
+        <hr>
+    </form>
+    <button id="submitButton" onclick="submitUser()">Register</button>
+</div>
 </body>
 </html>
