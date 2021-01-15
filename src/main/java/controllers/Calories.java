@@ -27,7 +27,7 @@ public class Calories{
 
     @POST
     @Path("get")
-    public String getLowCalories(@FormDataParam("Exercise") String exercise, @FormDataParam("Intensity") String intensity) {
+    public String getCalories(@FormDataParam("Exercise") String exercise, @FormDataParam("Intensity") String intensity) {
 
         System.out.println("Invoked Calories.getCaloriesPerMin() with Exercise Name " + exercise);
 

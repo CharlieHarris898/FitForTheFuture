@@ -1,6 +1,6 @@
 .header {
     padding: 80px;
-    height: 175px;
+    height: 22%;
     left:5px;
     right:5px;
     position:fixed;
@@ -27,9 +27,9 @@
     text-align: center;
     background: aliceblue;
     position: absolute;
-    top: 400px;
+    top: 40.94%;
     height: 55%;
-    bottom: 25px;
+    bottom: 2.56%;
     left:25px;
     right:25px;
     border: 5px solid black;
@@ -52,8 +52,8 @@
     color: black;
     font-family: "Rockwell", serif;
     border-radius: 12px;
-    width: 300px;
-    height: 125px;
+    width: 15.71%;
+    height: 13%;
     font-size: xx-large;
     border: 5px solid darkblue;
 }
@@ -97,80 +97,74 @@
 
 #Home{
     position: fixed;
-    top: 25px;
-    left: 200px;
+    top: 3%;
+    left: 10.5%;
 }
 #HomeSelected{
     position: fixed;
-    top: 25px;
-    left: 200px;
+    top: 3%;
+    left: 10.5%;
     background: #6efdff;
     border: 5px solid #57c8c9;
 }
 #Calories{
     position: fixed;
-    top: 175px;
-    left: 35px;
-}
-
-#Calories{
-    position: fixed;
-    top: 175px;
-    left: 35px;
+    top: 17.5%;
+    left: 1.83%;
 }
 
 #CaloriesSelected{
     position: fixed;
-    top: 175px;
-    left: 35px;
+    top: 17.5%;
+    left: 1.83%;
     background: #6efdff;
     border: 5px solid #57c8c9;
 }
 #Info{
     position: fixed;
-    top: 175px;
-    left: 365px;
+    top: 17.5%;
+    left: 19.5%;
 }
 #InfoSelected{
     position: fixed;
-    top: 175px;
-    left: 365px;
+    top: 17.5%;
+    left: 19.5%;
     background: #6efdff;
     border: 5px solid #57c8c9;
 }
 #FoodInfo{
     position: fixed;
-    top: 25px;
-    right: 200px;
+    top: 3%;
+    right:10.5%;
 }
 #FoodInfoSelected{
     position: fixed;
-    top: 25px;
-    right: 200px;
+    top: 3%;
+    right: 10.5%;
     background: #6efdff;
     border: 5px solid #57c8c9;
 }
 #Recipes{
     position: fixed;
-    top: 175px;
-    right: 365px;
+    top: 17.5%;
+    right: 19.5%;
 }
 #RecipesSelected{
     position: fixed;
-    top: 175px;
-    right: 365px;
+    top: 17.5%;
+    right: 19.5%;
     background: #6efdff;
     border: 5px solid #57c8c9;
 }
 #Exercises{
     position: fixed;
-    top: 175px;
-    right: 35px;
+    top: 17.5%;
+    right: 1.83%;
 }
 #ExercisesSelected{
     position: fixed;
-    top: 175px;
-    right: 35px;
+    top: 17.5%;
+    right: 1.83%;
     background: #6efdff;
     border: 5px solid #57c8c9;
 }
@@ -222,8 +216,9 @@
     border: 5px solid #555;
     border-radius: 12px;
     left:37.5%;
-    right:35%;
     top: 25%;
+    width: 25%;
+    height: ;
 }
 #LogoWelcome{
     border: 5px solid #555;
