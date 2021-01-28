@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>View User Info</title>
+    <title>View Food Info</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
         th, td, p, input, h3 {
@@ -64,12 +64,12 @@
                     alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
                 } else {
                     console.log(response.toString());
-                    fillUserForm(response);
+                    fillFoodForm(response);
                 }
             });
 
         }
-        function fillUserForm(data) {
+        function fillFoodForm(data) {
             console.log("invoked fillUserForm()");
 
             if (data.Vegetarian == '1'){

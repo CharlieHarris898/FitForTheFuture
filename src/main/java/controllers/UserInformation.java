@@ -34,7 +34,7 @@ public class UserInformation {
             ResultSet results = statement.executeQuery();
             //if there is not record with this username and password, condition below will be false
             if (results.next() == false) {
-                return "{\"Error\": \"Username or password is incorrect.  Are you sure you've registered? \"}";
+                return "{\"Error\": \"Username or password is incorrect. Please try again or register for an account. \"}";
             } else {
                 int userID = results.getInt("UserID");          //take the userId from the record returned in results
                 String token = UUID.randomUUID().toString();                 //create a unique ID for session
@@ -177,7 +177,7 @@ public class UserInformation {
         }
         catch (Exception exception) {
             System.out.println("Database error: " + exception.getMessage());
-            return "{\"Error\": \"Error updating username. Possible Error: username ealready taken.\"}";
+            return "{\"Error\": \"Error updating username. Possible Error: username already taken.\"}";
 
         }
     }
